@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /me.webp
+Disallow: /favicon.svg
+Disallow: /ar Kevin S Zanzi CV.pdf
+Disallow: /en Kevin S Zanzi CV.pdf
