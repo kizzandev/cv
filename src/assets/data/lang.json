@@ -1,0 +1,172 @@
+{
+  "common": {
+    "title_name": "Kizzan",
+    "title_tld": ".dev",
+    "email": "kevin@kizzan.dev",
+    "linkedin": "https://www.linkedin.com/in/kevinzanzi/",
+    "github": "https://github.com/kizzandev",
+    "blog": "https://blog.kizzan.dev/",
+    "langs": ["ar", "en"],
+    "years_of_experience": "1"
+  },
+  "ar": {
+    "socials": {
+      "title_email": "Enviar un correo electrónico a Kizzan dev",
+      "title_linkedin": "Visitar el perfil de LinkedIn de Kizzan dev",
+      "title_github": "Visitar el perfil de GitHub de Kizzan dev",
+      "title_blog": "Visitar el blog de Kizzan dev",
+      "title_download_cv": "Descargar CV de Kizzan dev",
+      "title_change_lang": "Cambiar el idioma a",
+      "title_change_theme": "Cambiar el tema a modo"
+    },
+    "summary": {
+      "title": "Desarrollar, Resolver, Aprender",
+      "text": "Desarrollador de software con experiencia práctica en desarrollo frontend remoto, especializado en React, JavaScript, TypeScript y Tailwind CSS. Experto en metodologías ágiles, destacándose en entornos de equipo colaborativos para ofrecer soluciones innovadoras de manera eficiente."
+    },
+    "bento": {
+      "years": "Años de experiencia",
+      "now": "Ahora",
+      "education": "UTN",
+      "degree": "Ingeniería en Sistemas de Información e Ingeniería Industrial",
+      "languages": "Idiomas",
+      "job_title": "Disponible",
+      "job_location": "Remoto, Planeta Tierra | Presencial/Híbrido en CABA, Buenos Aires, Argentina",
+      "job_text": "En busca de un laburo a part/full time presencial, híbrido o remoto. Busco un salario de x5 el SMVM y beneficios como horarios flexibles, asistencia educativa, capacitación profesional y posibilidad de crecimiento.",
+      "main_project": "Mi startup",
+      "main_project_advocacy": "100+ clientes & $1k+ ganancias",
+      "main_project_text": "Solución a problema tal con servicio y mucho más.",
+      "list_1_1": "Node.js & JS & TS",
+      "list_1_2": "Next.js",
+      "list_1_3": "React.js",
+      "list_2_1": "Solución de Problemas",
+      "list_2_2": "Trabajo en Equipo",
+      "list_2_3": "Autor",
+      "blog_title": "Último Artículo"
+    },
+    "experience": [
+      {
+        "title": "Desarrollador",
+        "location": "Gobierno de la Ciudad de Buenos Aires | Remoto | Buenos Aires, Argentina",
+        "description": "Contrato para desarrollar una aplicación web para la gestión de socios y eventos, formando parte de un Agile Squad multidisiplinario participando en el desarrollo de la base de datos SQL y Frontend.",
+        "bullets": [
+          "Colaboré en el diseño de la arquitectura de la base de datos, lo que  condujo a una mejora del 25% en la escalabilidad del sistema.",
+          "Diseñé y desarrollé la lógica de enrutamiento para la gestión de socios y  eventos, optimizando la navegación del usuario y reduciendo el tiempo  de carga en un 40%.",
+          "Coordiné la organización del equipo para garantizar una colaboración  efectiva en el desarrollo de la aplicación web, facilitando la  comunicación y aumentando la productividad del equipo en un 30%.",
+          "Establecí una comunicación fluida con el Product Owner para comprender  los requisitos del proyecto y garantizar una alineación constante, lo  que resultó en una disminución del 19% en los errores de interpretación y  una entrega más precisa de funcionalidades clave."
+        ]
+      }
+    ],
+    "technologies": [
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "C++",
+      "HTML",
+      "CSS",
+      "Node.js",
+      "Express.js",
+      "Tailwind CSS",
+      "Next.js",
+      "React.js",
+      "Astro",
+      "RESTful",
+      "MySQL",
+      "Comunicación",
+      "Resolución de Problemas",
+      "Trabajo en Equipo",
+      "Adaptabilidad",
+      "Git",
+      "Slack",
+      "GitHub",
+      "Markdown",
+      "VSCode",
+      "Figma",
+      "Agile",
+      "Kanban",
+      "Scrum",
+      "Windows",
+      "npm",
+      "pnpm"
+    ]
+  },
+  "en": {
+    "socials":{
+      "title_email": "Send an email to Kizzan dev",
+      "title_linkedin": "Visit Kizzan dev's LinkedIn profile",
+      "title_github": "Visit Kizzan dev's GitHub profile",
+      "title_blog": "Visit Kizzan dev's blog",
+      "title_download_cv": "Download Kizzan dev's CV",
+      "title_change_lang": "Change language to",
+      "title_change_theme": "Change theme to"
+    },
+    "summary": {
+      "title": "Develop, Solve, Learn",
+      "text": "Software developer with hands-on experience in remote frontend development, specializing in React, JavaScript, TypeScript, and Tailwind CSS. Proficient in Agile methodologies, thriving in collaborative squad environments to deliver innovative solutions efficiently."
+    },
+    "bento": {
+      "years": "Years of experience",
+      "now": "Now",
+      "education": "UTN",
+      "degree": "Information Systems Engineering & Industrial Engineering",
+      "languages": "Languages",
+      "job_title": "Available",
+      "job_location": "Remote, Planet Earth",
+      "job_text": "Seeking a remote part/full-time job. Looking for a salary of $3000+ and  benefits such as flexible hours, educational assistance, professional  training, and growth opportunities.",
+      "main_project": "My startup",
+      "main_project_advocacy": "100+ clients & $1k+ revenue",
+      "main_project_text": "Solution to such problem with service and much more.",
+      "list_1_1": "Node.js & JS & TS",
+      "list_1_2": "Next.js",
+      "list_1_3": "React.js",
+      "list_2_1": "Problem Solving",
+      "list_2_2": "Teamwork",
+      "list_2_3": "Author",
+      "blog_title": "Latest Article"
+    },
+    "experience": [
+      {
+        "title": "Developer",
+        "location": "City Government of Buenos Aires | Remote | Buenos Aires, Argentina",
+        "description": "Contracted to develop a web application for managing partners and events, as a member of a multidisciplinary Agile Squad involved in the development of the SQL database and the frontend application.",
+        "bullets": [
+          "Collaborated in the design of the database architecture, leading to a 25% improvement in system scalability.",
+          "Designed and developed routing logic for managing partners and events, optimizing user navigation and reducing load time by 40%.",
+          "Coordinated team organization to ensure effective collaboration in web application development, facilitating communication and increasing team productivity by 30%.",
+          "Established open communication with the Product Owner to understand project requirements and ensure constant alignment, resulting in a 19% decrease in interpretation errors and more accurate delivery of key functionalities."
+        ]
+      }
+    ],
+    "technologies": [
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "C++",
+      "HTML",
+      "CSS",
+      "Node.js",
+      "Express.js",
+      "Tailwind CSS",
+      "Next.js",
+      "React.js",
+      "Astro",
+      "RESTful",
+      "MySQL",
+      "Communication",
+      "Problem Solving",
+      "Teamwork",
+      "Adaptability",
+      "Git",
+      "Slack",
+      "GitHub",
+      "Markdown",
+      "VSCode",
+      "Figma",
+      "Agile",
+      "Kanban",
+      "Scrum",
+      "Windows",
+      "npm",
+      "pnpm"
+    ]
+  }
+}
