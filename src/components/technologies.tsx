@@ -9,7 +9,7 @@ export default function Technologies({ lang }: { lang: string }) {
       <h2 className="text-[calc(var(--h2-low))]">
         {lang === "es"
           ? "Tecnologías en un mapa no ordenado"
-          : "Tecnologías en un mapa no ordenado"}
+          : "Technologies in an unordered map"}
       </h2>
       <section className="flex flex-wrap gap-4">
         {lang === "es"
