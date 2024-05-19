@@ -20,7 +20,7 @@
 
       if (
         localStorage.lang === "es" ||
-        window.navigator.language.includes("es")
+        (!("lang" in localStorage) && window.navigator.language.includes("es"))
       ) {
         document.documentElement.lang = "es";
         localStorage.lang = "es";
