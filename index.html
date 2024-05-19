@@ -18,7 +18,10 @@
         localStorage.theme = "light";
       }
 
-      if (localStorage.lang === "es" || window.navigator.language === "es") {
+      if (
+        localStorage.lang === "es" ||
+        window.navigator.language.includes("es")
+      ) {
         document.documentElement.lang = "es";
         localStorage.lang = "es";
         const url = new URL(window.location.href);
