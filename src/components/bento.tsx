@@ -171,7 +171,8 @@ export default function Bento({ lang }: { lang: string }) {
               className="text-[calc(var(--h3))]
               text-[var(--color-accent-light)] dark:text-[var(--color-accent-dark)]"
             >
-              {data_ar.now}
+              {/* {data_ar.now} */}
+              {lang === "es" ? data_ar.now : data_en.now}
             </h2>
             <p className="text-[calc(var(--p))] leading-6">
               {lang === "es" ? data_ar.job_title : data_en.job_title}
