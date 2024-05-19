@@ -88,7 +88,7 @@ export default function Bento({ lang }: { lang: string }) {
          */}
         <article
           className="flex flex-col gap-1
-          col-span-full row-span-2 md:col-span-2
+          col-span-full row-span-2 md:col-span-4 _md:col-span-2
            bg-gradient-to-tr from-[var(--bg-primary-dark)] to-[var(--bg-secondary)]"
         >
           <h2
@@ -108,7 +108,7 @@ export default function Bento({ lang }: { lang: string }) {
         {/* MARK: MY PROJECT
          */}
         <article
-          className="flex flex-col gap-1
+          className="hidden _flex flex-col gap-1
           col-span-full row-span-2 md:col-span-2
           bg-gradient-to-tr from-[var(--bg-primary-dark)] to-[var(--bg-secondary)]"
         >
