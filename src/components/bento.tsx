@@ -89,7 +89,7 @@ export default function Bento({ lang }: { lang: string }) {
         <article
           className="flex flex-col gap-1
           col-span-full row-span-2 md:col-span-4 _md:col-span-2
-           bg-gradient-to-tr from-[var(--bg-primary-dark)] to-[var(--bg-secondary)]"
+           dark:bg-gradient-to-tr dark:from-[var(--bg-primary-dark)] dark:to-[var(--bg-secondary)]"
         >
           <h2
             className="text-[calc(var(--h3))]
@@ -110,7 +110,7 @@ export default function Bento({ lang }: { lang: string }) {
         <article
           className="hidden _flex flex-col gap-1
           col-span-full row-span-2 md:col-span-2
-          bg-gradient-to-tr from-[var(--bg-primary-dark)] to-[var(--bg-secondary)]"
+          dark:bg-gradient-to-tr dark:from-[var(--bg-primary-dark)] dark:to-[var(--bg-secondary)]"
         >
           <h2
             className="text-[calc(var(--h3))]
@@ -146,8 +146,10 @@ export default function Bento({ lang }: { lang: string }) {
         >
           {/* MARK: YEARS OF EXPERIENCE
            */}
-          <section className="
-           bg-gradient-to-tr from-[var(--bg-primary-dark)] to-[var(--bg-secondary)]">
+          <section
+            className="
+           dark:bg-gradient-to-tr dark:from-[var(--bg-primary-dark)] dark:to-[var(--bg-secondary)]"
+          >
             <h2
               className="text-[calc(var(--h3))]
               text-[var(--color-accent-light)] dark:text-[var(--color-accent-dark)]"
@@ -161,8 +163,10 @@ export default function Bento({ lang }: { lang: string }) {
 
           {/* MARK: CURRENT JOB
            */}
-          <section className="hidden lg:block 
-           bg-gradient-to-tr from-[var(--bg-primary-dark)] to-[var(--bg-secondary)]">
+          <section
+            className="hidden lg:block 
+           dark:bg-gradient-to-tr dark:from-[var(--bg-primary-dark)] dark:to-[var(--bg-secondary)]"
+          >
             <h2
               className="text-[calc(var(--h3))]
               text-[var(--color-accent-light)] dark:text-[var(--color-accent-dark)]"
@@ -176,8 +180,10 @@ export default function Bento({ lang }: { lang: string }) {
 
           {/* MARK: EDUCATION
            */}
-          <section className="
-           bg-gradient-to-tr from-[var(--bg-primary-dark)] to-[var(--bg-secondary)]">
+          <section
+            className="
+           dark:bg-gradient-to-tr dark:from-[var(--bg-primary-dark)] dark:to-[var(--bg-secondary)]"
+          >
             <h2
               className="text-[calc(var(--h3))]
               text-[var(--color-accent-light)] dark:text-[var(--color-accent-dark)]"
@@ -191,8 +197,10 @@ export default function Bento({ lang }: { lang: string }) {
 
           {/* MARK: LANGUAGES
            */}
-          <section className="
-           bg-gradient-to-tr from-[var(--bg-primary-dark)] to-[var(--bg-secondary)]">
+          <section
+            className="
+           dark:bg-gradient-to-tr dark:from-[var(--bg-primary-dark)] dark:to-[var(--bg-secondary)]"
+          >
             <article
               className="flex gap-4 flex-wrap
               text-[calc(var(--h3))]
@@ -295,7 +303,7 @@ export default function Bento({ lang }: { lang: string }) {
           className="grid gap-1
          col-span-full row-span-2
         md:col-span-2
-        bg-gradient-to-tr from-[var(--bg-primary-dark)] to-[var(--bg-secondary)]"
+        dark:bg-gradient-to-tr dark:from-[var(--bg-primary-dark)] dark:to-[var(--bg-secondary)]"
         >
           <h2
             className="text-[calc(var(--h3))]
