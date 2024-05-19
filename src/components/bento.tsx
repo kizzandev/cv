@@ -206,7 +206,7 @@ export default function Bento({ lang }: { lang: string }) {
                     lang === "ar" ? "Argentina" : "United States"
                   }`}
                   className="rounded-[4px]
-                  max-w-[100px] max-h-[56.25px] aspect-[100/56.25]"
+                  max-w-[76px] max-h-[42.75px] aspect-[76/42.75]"
                 />
               ))}
             </article>
