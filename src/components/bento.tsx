@@ -185,10 +185,10 @@ export default function Bento({ lang }: { lang: string }) {
            dark:bg-gradient-to-tr dark:from-[var(--bg-primary-dark)] dark:to-[var(--bg-secondary)]"
           >
             <h2
-              className="text-[calc(var(--h3))]
+              className="text-[clamp(calc(var(--h3-low)),_calc(var(--h3)),_100%)]
               text-[var(--color-accent-light)] dark:text-[var(--color-accent-dark)]"
             >
-              {data_ar.education}
+              {lang === "es" ? data_ar.education : data_en.education}
             </h2>
             <p className="text-[calc(var(--p))] leading-6">
               {lang === "es" ? data_ar.degree : data_en.degree}
