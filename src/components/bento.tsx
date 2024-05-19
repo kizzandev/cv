@@ -202,10 +202,14 @@ export default function Bento({ lang }: { lang: string }) {
            dark:bg-gradient-to-tr dark:from-[var(--bg-primary-dark)] dark:to-[var(--bg-secondary)]"
           >
             <article
-              className="flex gap-4 flex-wrap
-              text-[calc(var(--h3))]
-              text-[var(--color-accent-light)] dark:text-[var(--color-accent-dark)]"
+              className="flex gap-4 flex-wrap"
             >
+              <h2
+                className="w-full h-auto text-[clamp(calc(var(--h3-low)),_calc(var(--h3)),_100%)]
+              text-[var(--color-accent-light)] dark:text-[var(--color-accent-dark)]"
+              >
+                {lang === "es" ? data_ar.languages : data_en.languages}
+              </h2>
               {data.common.langs.map((lang, idx) => (
                 <img
                   key={`${idx}lang`}
@@ -218,9 +222,9 @@ export default function Bento({ lang }: { lang: string }) {
                 />
               ))}
             </article>
-            <p className="text-[calc(var(--p))] leading-6 mt-3">
+            {/* <p className="text-[calc(var(--p))] leading-6 mt-3">
               {lang === "es" ? data_ar.languages : data_en.languages}
-            </p>
+            </p> */}
           </section>
         </article>
       </section>
