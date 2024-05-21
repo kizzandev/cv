@@ -190,6 +190,9 @@ function Socials(props: any) {
             localStorage.theme =
               localStorage.theme === "dark" ? "light" : "dark";
             document.documentElement.classList.toggle("dark");
+            const url = new URL(window.location.href);
+            url.searchParams.set("theme", localStorage.theme);
+            window.history.replaceState({}, "", url);
 
             let palabra_correcta;
             if (localStorage.theme === "dark" && lang === "es") {

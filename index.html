@@ -28,7 +28,10 @@
 
     <!-- SOCIAL METADATA -->
     <meta property="og:title" content="CV | Kizzan" />
-    <meta property="og:description" content="Software developer with hands-on experience in remote frontend development, specializing in React, JavaScript, TypeScript, and Tailwind CSS. Proficient in Agile methodologies, thriving in collaborative squad environments to deliver innovative solutions efficiently." />
+    <meta
+      property="og:description"
+      content="Software developer with hands-on experience in remote frontend development, specializing in React, JavaScript, TypeScript, and Tailwind CSS. Proficient in Agile methodologies, thriving in collaborative squad environments to deliver innovative solutions efficiently."
+    />
     <meta property="og:image" content="https://cv.kizzan.dev/logo_k.webp" />
     <meta property="og:url" content="https://cv.kizzan.dev/" />
     <meta property="og:type" content="website" />
@@ -37,42 +40,58 @@
 
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="CV | Kizzan" />
-    <meta property="twitter:description" content="Software developer with hands-on experience in remote frontend development, specializing in React, JavaScript, TypeScript, and Tailwind CSS. Proficient in Agile methodologies, thriving in collaborative squad environments to deliver innovative solutions efficiently." />
-    <meta property="twitter:image" content="https://cv.kizzan.dev/logo_k.webp" />
+    <meta
+      property="twitter:description"
+      content="Software developer with hands-on experience in remote frontend development, specializing in React, JavaScript, TypeScript, and Tailwind CSS. Proficient in Agile methodologies, thriving in collaborative squad environments to deliver innovative solutions efficiently."
+    />
+    <meta
+      property="twitter:image"
+      content="https://cv.kizzan.dev/logo_k.webp"
+    />
     <meta property="twitter:url" content="https://cv.kizzan.dev/" />
     <meta property="twitter:site" content="@kizzandev" />
     <meta property="twitter:creator" content="@kizzandev" />
 
     <!-- SCRIPT -->
     <script>
+      const url = new URL(window.location.href);
+
       if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
+        url.searchParams.get("theme") !== "light" &&
+        (localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches))
       ) {
         document.documentElement.classList.add("dark");
         localStorage.theme = "dark";
+        url.searchParams.set("theme", "dark");
       } else {
         document.documentElement.classList.remove("dark");
         localStorage.theme = "light";
       }
 
+      document.documentElement.lang = "en";
       if (
         localStorage.lang === "es" ||
-        (!("lang" in localStorage) && window.navigator.language.includes("es"))
+        (!("lang" in localStorage) &&
+          window.navigator.language.includes("es")) ||
+        url.searchParams.get("lang") === "es"
       ) {
         document.documentElement.lang = "es";
         localStorage.lang = "es";
-        const url = new URL(window.location.href);
         url.searchParams.set("lang", "es");
-        window.history.replaceState({}, "", url);
-      } else {
-        document.documentElement.lang = "en";
+      } else if (
+        localStorage.lang === "en" ||
+        (!("lang" in localStorage) &&
+          window.navigator.language.includes("en")) ||
+        url.searchParams.get("lang") === "en"
+      ) {
         localStorage.lang = "en";
-        const url = new URL(window.location.href);
         url.searchParams.set("lang", "en");
-        window.history.replaceState({}, "", url);
+      } else {
+        url.searchParams.set("lang", "en");
       }
+      window.history.replaceState({}, "", url);
     </script>
   </head>
   <body>
