@@ -70,25 +70,28 @@
         localStorage.theme = "light";
       }
 
-      document.documentElement.lang = "en";
+      const langParam = url.searchParams.get("lang");
       if (
-        localStorage.lang === "es" ||
-        (!("lang" in localStorage) &&
-          window.navigator.language.includes("es")) ||
-        url.searchParams.get("lang") === "es"
+        langParam === "es" ||
+        (!langParam &&
+          (localStorage.lang === "es" ||
+            (!("lang" in localStorage) &&
+              window.navigator.language.includes("es"))))
       ) {
         document.documentElement.lang = "es";
         localStorage.lang = "es";
         url.searchParams.set("lang", "es");
       } else if (
-        localStorage.lang === "en" ||
-        (!("lang" in localStorage) &&
-          window.navigator.language.includes("en")) ||
-        url.searchParams.get("lang") === "en"
+        langParam === "en" ||
+        (!langParam &&
+          (localStorage.lang === "en" ||
+            (!("lang" in localStorage) &&
+              window.navigator.language.includes("en"))))
       ) {
         localStorage.lang = "en";
         url.searchParams.set("lang", "en");
       } else {
+        localStorage.lang = "en";
         url.searchParams.set("lang", "en");
       }
       window.history.replaceState({}, "", url);
