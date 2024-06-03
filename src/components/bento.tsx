@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import data from "../assets/data/lang.json";
 
 import {
@@ -10,6 +10,8 @@ import {
   IconAuthor,
 } from "./icons";
 
+import { languageContext } from "../Root";
+
 /**
  * Bento component
  * grid
@@ -18,13 +20,15 @@ import {
 const data_ar = data.ar.bento;
 const data_en = data.en.bento;
 
-export default function Bento({ lang }: { lang: string }) {
+export default function Bento() {
   // We only want title and description from the RSS feed
   // item[0].title and item[0].description
   // Get RSS feed from
   // blog.kizzan.dev/rss.xml IF lang is "es"
   // blog.kizzan.dev/en/rss.xml IF lang is "en"
   // Fetch RSS feed
+
+  const { lang } = useContext(languageContext);
 
   const [blogTitle, setBlogTitle] = useState(
     lang === "es" ? "Cargando..." : "Loading..."
@@ -202,9 +206,7 @@ export default function Bento({ lang }: { lang: string }) {
             className="
            dark:bg-gradient-to-tr dark:from-[var(--bg-primary-dark)] dark:to-[var(--bg-secondary)]"
           >
-            <article
-              className="flex gap-4 flex-wrap"
-            >
+            <article className="flex gap-4 flex-wrap">
               <h2
                 className="w-full h-auto text-[clamp(calc(var(--h3-low)),_calc(var(--h3)),_100%)]
               text-[var(--color-accent-light)] dark:text-[var(--color-accent-dark)]"

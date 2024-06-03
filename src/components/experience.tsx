@@ -1,9 +1,13 @@
+import { useContext } from "react";
 import data from "../assets/data/lang.json";
+import { languageContext } from "../Root";
 
 const experience = data.ar.experience;
 const experience_en = data.en.experience;
 
-export default function Experience({ lang }: { lang: string }) {
+export default function Experience() {
+  const { lang } = useContext(languageContext);
+
   return (
     <article className="flex flex-col gap-1">
       <h2 className="text-[calc(var(--h2-low))]">

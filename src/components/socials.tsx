@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import {
   IconAt,
@@ -11,6 +11,7 @@ import {
 } from "./icons";
 
 import data from "../assets/data/lang.json";
+import { languageContext } from "../Root";
 
 const { email, linkedin, github, blog } = data.common;
 
@@ -36,8 +37,8 @@ const {
 
 const mailto = `mailto:${email}`;
 
-function Socials(props: any) {
-  const { lang, setLang } = props;
+function Socials() {
+  const { lang, setLang } = useContext(languageContext);
 
   const [cvHref, setCVHref] = useState(
     `/${lang === "es" ? "ar" : "en"} Kevin S Zanzi CV.pdf`

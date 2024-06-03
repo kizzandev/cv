@@ -1,10 +1,11 @@
 import Socials from "./socials";
 
 import data from "../assets/data/lang.json";
+import { Link } from "react-router-dom";
 
 const { title_name, title_tld } = data.common;
 
-function Header(props: any) {
+function Header() {
   return (
     <header className="flex flex-col gap-[32px]">
       <h1
@@ -19,7 +20,25 @@ function Header(props: any) {
           {title_tld}
         </span>
       </h1>
-      <Socials lang={props.lang} setLang={props.setLang} />
+      <Socials />
+      <nav className="ml-auto">
+        <ul
+          className="flex gap-4
+        [&>li>*]:px-2 [&>li>*]:py-1
+        [&>li]:transition-colors [&>li]:duration-150
+        [&>li]:rounded-md
+        [&>li:hover]:bg-[var(--bg-secondary)]
+        [&>li:hover]:text-[var(--color-accent-light)] [&>li:hover]:dark:text-[var(--color-accent-dark)]
+        "
+        >
+          <li>
+            <Link to={"/"}>Home</Link>
+          </li>
+          <li>
+            <Link to={"/mvv"}>MVV</Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 }
