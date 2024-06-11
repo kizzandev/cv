@@ -55,6 +55,10 @@
   position: relative;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 h1,
 h2,
 h3,

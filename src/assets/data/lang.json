@@ -89,15 +89,8 @@
       "pnpm"
     ],
     "mvv": {
-      "mission": "Aportar el máximo valor a nuestros clientes a través de la entrega de soluciones de calidad. Además, mantener el constante e inmutable crecimiento y aprendizaje, adoptando las mejores prácticas para un desarrollo eficiente y efectivo.",
-      "vision": "Ser el referente en la industria del software, reconocido por inspirar confianza y admiración, e impulsar la innovación en cada parte de nuestro camino.",
-      "values": [
-        "Integridad#Actuar con ética y honestidad",
-        "Excelencia#Mantener estándares de calidad en todo proyecto y servicio desarrollado",
-        "Confianza#Fomentar la confianza en cada relación y mantener la transparencia",
-        "Compromiso#Dedicar tiempo y esfuerzo para lograr los objetivos propuestos",
-        "Innovación#Buscar nuevas y mejorar soluciones para resolver las necesidades y problemas"
-      ]
+      "mission": "Aportar el máximo valor a mis clientes mediante soluciones de calidad. Mantener un crecimiento constante y aprendizaje continuo, adoptando las mejores prácticas para un desarrollo eficiente y efectivo.",
+      "vision": "Ser el referente en la industria del software, reconocido por inspirar confianza, admiración, e impulsar la innovación en cada paso de nuestro camino."
     }
   },
   "en": {
@@ -180,15 +173,8 @@
       "pnpm"
     ],
     "mvv": {
-      "mission": "Deliver maximum value to our clients through quality solutions. Additionally, maintain constant and immutable growth and learning, adopting best practices for efficient and effective development.",
-      "vision": "Be the reference in the software industry, recognized for inspiring trust and admiration, and driving innovation in every part of our journey.",
-      "values": [
-        "Integrity#Act with ethics and honesty",
-        "Excellence#Maintain quality standards in every project and service developed",
-        "Trust#Foster trust in every relationship and maintain transparency",
-        "Commitment#Dedicate time and effort to achieve proposed objectives",
-        "Innovation#Seek new and improve solutions to solve needs and problems"
-      ]
+      "mission": "Deliver maximum value to my clients through quality solutions. Maintain constant growth and continuous learning, adopting best practices for efficient and effective development.",
+      "vision": "Be the reference in the software industry, recognized for inspiring trust, admiration, and driving innovation at every step of our journey."
     }
   }
 }

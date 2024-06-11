@@ -7,11 +7,13 @@ import App from "./App.tsx";
 import Mvv from "./pages/Mvv.tsx";
 
 import "./index.css";
+import ErrorPage from "./pages/Error.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/mvv",
