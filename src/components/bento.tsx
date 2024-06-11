@@ -232,7 +232,13 @@ export default function BentoWIP() {
         col-span-full md:col-[1/span_4] row-[3/span_1]"
         >
           <IconNode className="left-0 absolute w-full max-w-[50%] h-full z-10" />
-          <div className="left-0 bg-gradient-to-t from-black to-transparent w-full h-full absolute z-20"></div>
+          <div
+            className="
+          left-0
+          bg-gradient-to-t
+          from-[var(--bg-primary-dark)] dark:from-black to-transparent
+          w-full h-full absolute z-20"
+          ></div>
           <p className="text-[calc(var(--p))] leading-6 text-[var(--color-accent-dark)] font-semibold mt-auto z-40">
             {lang === "es" ? data_ar.list_1_1 : data_en.list_1_1}
           </p>
@@ -243,7 +249,7 @@ export default function BentoWIP() {
         col-span-full md:col-[5/span_4] row-[3/span_1]"
         >
           <IconNext className="left-0 absolute w-full max-w-[50%] h-full z-10" />
-          <div className="left-0 bg-gradient-to-t from-black to-transparent w-full h-full absolute z-20"></div>
+          <div className="left-0 bg-gradient-to-t from-[var(--bg-primary-dark)] dark:from-black to-transparent w-full h-full absolute z-20"></div>
           <p className="text-[calc(var(--p))] leading-6 text-[var(--color-accent-dark)] font-semibold mt-auto z-40">
             {lang === "es" ? data_ar.list_1_2 : data_en.list_1_2}
           </p>
@@ -254,7 +260,7 @@ export default function BentoWIP() {
         col-span-full md:col-[9/span_4] row-[3/span_1]"
         >
           <IconReact className="left-0 absolute w-full max-w-[50%] h-full z-10" />
-          <div className="left-0 bg-gradient-to-t from-black to-transparent w-full h-full absolute z-20"></div>
+          <div className="left-0 bg-gradient-to-t from-[var(--bg-primary-dark)] dark:from-black to-transparent w-full h-full absolute z-20"></div>
           <p className="text-[calc(var(--p))] leading-6 text-[var(--color-accent-dark)] font-semibold mt-auto z-40">
             {lang === "es" ? data_ar.list_1_3 : data_en.list_1_3}
           </p>
@@ -265,7 +271,7 @@ export default function BentoWIP() {
         col-span-full md:col-[1/span_4] row-[4/span_1]"
         >
           <IconProblems className="left-0 absolute w-full max-w-[50%] h-full z-10" />
-          <div className="left-0 bg-gradient-to-t from-black to-transparent w-full h-full absolute z-20"></div>
+          <div className="left-0 bg-gradient-to-t from-[var(--bg-primary-dark)] dark:from-black to-transparent w-full h-full absolute z-20"></div>
           <p className="text-[calc(var(--p))] leading-6 text-[var(--color-accent-dark)] font-semibold mt-auto z-40">
             {lang === "es" ? data_ar.list_2_1 : data_en.list_2_1}
           </p>
@@ -276,7 +282,7 @@ export default function BentoWIP() {
         col-span-full  md:col-[5/span_4] row-[4/span_1]"
         >
           <IconTeam className="left-0 absolute w-full max-w-[50%] h-full z-10" />
-          <div className="left-0 bg-gradient-to-t from-black to-transparent w-full h-full absolute z-20"></div>
+          <div className="left-0 bg-gradient-to-t from-[var(--bg-primary-dark)] dark:from-black to-transparent w-full h-full absolute z-20"></div>
           <p className="text-[calc(var(--p))] leading-6 text-[var(--color-accent-dark)] font-semibold mt-auto z-40">
             {lang === "es" ? data_ar.list_2_2 : data_en.list_2_2}
           </p>
@@ -287,7 +293,7 @@ export default function BentoWIP() {
         col-span-full  md:col-[9/span_4] row-[4/span_1]"
         >
           <IconAuthor className="left-0 absolute w-full max-w-[50%] h-full z-10" />
-          <div className="left-0 bg-gradient-to-t from-black to-transparent w-full h-full absolute z-20"></div>
+          <div className="left-0 bg-gradient-to-t from-[var(--bg-primary-dark)] dark:from-black to-transparent w-full h-full absolute z-20"></div>
           <p className="text-[calc(var(--p))] leading-6 text-[var(--color-accent-dark)] font-semibold mt-auto z-40">
             {lang === "es" ? data_ar.list_2_3 : data_en.list_2_3}
           </p>
