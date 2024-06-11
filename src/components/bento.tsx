@@ -72,22 +72,23 @@ export default function Bento() {
   }, [lang]);
 
   return (
-    <article className="flex flex-col gap-4">
+    <article className="flex flex-col gap-4 transition-all duration-300 ease-in-out">
       <section
         id="bento"
-        className="grid grid-cols-[18] grid-rows-4 gap-4
+        className="grid grid-cols-[18] grid-rows-1 md:grid-rows-4 gap-4
          auto-cols-fr
       [&>article]:bg-[var(--bg-secondary)]
       [&>article]:p-[16px]
       [&>article]:rounded-[var(--border-radius-8)]
+      transition-all duration-300 ease-in-out
       "
       >
         {/* MARK: CURRENT JOB
          */}
         <article
           className="flex flex-col gap-1
-          col-span-full md:col-[1/span_12] _md:col-[1/span_6]
-          row-[1/span_2]
+          col-span-full md:col-[1/span_18] lg:col-[1/span_12] _lg:col-[1/span_6]
+          row-span-1 lg:row-[1/span_2]
            dark:bg-gradient-to-tr dark:from-[var(--bg-primary-dark)] dark:to-[var(--bg-secondary)]"
         >
           <h2
@@ -108,8 +109,8 @@ export default function Bento() {
          */}
         <article
           className="hidden _flex flex-col gap-1
-          col-span-full md:col-[7/span_6]
-          row-[1/span_2]
+          col-span-full md:col-[1/span_18] lg:col-[7/span_6]
+          row-span-1 lg:row-[1/span_2]
           dark:bg-gradient-to-tr dark:from-[var(--bg-primary-dark)] dark:to-[var(--bg-secondary)]"
         >
           <h2
@@ -135,7 +136,8 @@ export default function Bento() {
         <article
           className="
            dark:bg-gradient-to-tr dark:from-[var(--bg-primary-dark)] dark:to-[var(--bg-secondary)]
-          col-[13/span_3] row-[1/span_1]"
+          col-span-full md:col-[1/span_6] lg:col-[13/span_3]
+          row-span-1 lg:row-[1/span_1]"
         >
           <h2
             className="text-[calc(var(--h3))]
@@ -153,7 +155,8 @@ export default function Bento() {
         <article
           className="hidden lg:block 
            dark:bg-gradient-to-tr dark:from-[var(--bg-primary-dark)] dark:to-[var(--bg-secondary)]
-           col-[16/span_3] row-[1/span_1]"
+           col-span-full lg:col-[16/span_3]
+           row-span-1 lg:row-[1/span_1]"
         >
           <h2
             className="text-[calc(var(--h3))]
@@ -172,11 +175,14 @@ export default function Bento() {
         <article
           className="
            dark:bg-gradient-to-tr dark:from-[var(--bg-primary-dark)] dark:to-[var(--bg-secondary)]
-           col-[13/span_3] row-[2/span_1]"
+           col-span-full md:col-[7/span_6] lg:col-[13/span_3]
+           row-span-1 lg:row-[2/span_1]"
         >
           <h2
             className="text-[clamp(calc(var(--h3-low)),_calc(var(--h3)),_100%)]
-              text-[var(--color-accent-light)] dark:text-[var(--color-accent-dark)]"
+              text-[var(--color-accent-light)] dark:text-[var(--color-accent-dark)]
+             overflow-x-hidden text-ellipsis"
+            title={lang === "es" ? data_ar.education : data_en.education}
           >
             {lang === "es" ? data_ar.education : data_en.education}
           </h2>
@@ -190,12 +196,15 @@ export default function Bento() {
         <article
           className="
            dark:bg-gradient-to-tr dark:from-[var(--bg-primary-dark)] dark:to-[var(--bg-secondary)]
-        col-[16/span_3] row-[2/span_1]"
+        col-span-full md:col-[13/span_6] lg:col-[16/span_3]
+        row-span-1 lg:row-[2/span_1]"
         >
           <section className="flex gap-4 flex-wrap">
             <h2
               className="w-full h-auto text-[clamp(calc(var(--h3-low)),_calc(var(--h3)),_100%)]
-              text-[var(--color-accent-light)] dark:text-[var(--color-accent-dark)]"
+              text-[var(--color-accent-light)] dark:text-[var(--color-accent-dark)]
+              overflow-x-hidden text-ellipsis"
+              title={lang === "es" ? data_ar.languages : data_en.languages}
             >
               {lang === "es" ? data_ar.languages : data_en.languages}
             </h2>
@@ -219,8 +228,9 @@ export default function Bento() {
         {/* MARK: NODEJS
          */}
         <article
-          className="flex items-center min-h-[100px] relative overflow-hidden
-        col-span-full md:col-[1/span_4] row-[3/span_1]"
+          className="hidden md:flex items-center min-h-[100px] relative overflow-hidden
+        col-span-full md:col-[1/span_6] lg:col-[1/span_4]
+        row-span-1 lg:row-[3/span_1]"
         >
           <IconNode className="left-0 absolute w-full max-w-[50%] h-full z-10" />
           <div
@@ -238,8 +248,9 @@ export default function Bento() {
         {/* MARK: NEXTJS
          */}
         <article
-          className="flex items-center min-h-[100px] relative overflow-hidden
-        col-span-full md:col-[5/span_4] row-[3/span_1]"
+          className="hidden md:flex items-center min-h-[100px] relative overflow-hidden
+        col-span-full md:col-[7/span_6] lg:col-[5/span_4]
+        row-span-1 lg:row-[3/span_1]"
         >
           <IconNext className="left-0 absolute w-full max-w-[50%] h-full z-10" />
           <div className="left-0 bg-gradient-to-t from-[var(--bg-primary-dark)] dark:from-black to-transparent w-full h-full absolute z-20"></div>
@@ -251,8 +262,9 @@ export default function Bento() {
         {/* MARK: REACTJS
          */}
         <article
-          className="flex items-center min-h-[100px] relative overflow-hidden
-        col-span-full md:col-[9/span_4] row-[3/span_1]"
+          className="hidden md:flex items-center min-h-[100px] relative overflow-hidden
+        col-span-full md:col-[13/span_6] lg:col-[9/span_4]
+        row-span-1 lg:row-[3/span_1]"
         >
           <IconReact className="left-0 absolute w-full max-w-[50%] h-full z-10" />
           <div className="left-0 bg-gradient-to-t from-[var(--bg-primary-dark)] dark:from-black to-transparent w-full h-full absolute z-20"></div>
@@ -264,8 +276,9 @@ export default function Bento() {
         {/* MARK: PROBLEMS
          */}
         <article
-          className="flex items-center min-h-[100px] relative overflow-hidden
-        col-span-full md:col-[1/span_4] row-[4/span_1]"
+          className="hidden md:flex items-center min-h-[100px] relative overflow-hidden
+        col-span-full md:col-[1/span_6] lg:col-[1/span_4]
+        row-span-1 lg:row-[4/span_1]"
         >
           <IconProblems className="left-0 absolute w-full max-w-[50%] h-full z-10" />
           <div className="left-0 bg-gradient-to-t from-[var(--bg-primary-dark)] dark:from-black to-transparent w-full h-full absolute z-20"></div>
@@ -277,8 +290,9 @@ export default function Bento() {
         {/* MARK: TEAM
          */}
         <article
-          className="flex items-center min-h-[100px] relative overflow-hidden
-        col-span-full  md:col-[5/span_4] row-[4/span_1]"
+          className="hidden md:flex items-center min-h-[100px] relative overflow-hidden
+        col-span-full md:col-[7/span_6] lg:col-[5/span_4]
+        row-span-1 lg:row-[4/span_1]"
         >
           <IconTeam className="left-0 absolute w-full max-w-[50%] h-full z-10" />
           <div className="left-0 bg-gradient-to-t from-[var(--bg-primary-dark)] dark:from-black to-transparent w-full h-full absolute z-20"></div>
@@ -290,8 +304,9 @@ export default function Bento() {
         {/* MARK: AUTHOR
          */}
         <article
-          className="flex items-center min-h-[100px] relative overflow-hidden
-        col-span-full  md:col-[9/span_4] row-[4/span_1]"
+          className="hidden md:flex items-center min-h-[100px] relative overflow-hidden
+        col-span-full md:col-[13/span_6] lg:col-[9/span_4]
+        row-span-1 lg:row-[4/span_1]"
         >
           <IconAuthor className="left-0 absolute w-full max-w-[50%] h-full z-10" />
           <div className="left-0 bg-gradient-to-t from-[var(--bg-primary-dark)] dark:from-black to-transparent w-full h-full absolute z-20"></div>
@@ -304,7 +319,8 @@ export default function Bento() {
          */}
         <article
           className="flex flex-col gap-1
-         col-span-full md:col-[13/span_6] row-[3/span_2]
+         col-span-full lg:col-[13/span_6]
+         row-span-1 md:col-[1/span_18] lg:row-[3/span_2]
         dark:bg-gradient-to-tr dark:from-[var(--bg-primary-dark)] dark:to-[var(--bg-secondary)]"
         >
           <h2
