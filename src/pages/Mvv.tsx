@@ -8,10 +8,7 @@ import Header from "../components/header";
 import data from "../assets/data/lang.json";
 
 const { mission, vision } = data.ar.mvv;
-const {
-  mission: mission_en,
-  vision: vision_en,
-} = data.en.mvv;
+const { mission: mission_en, vision: vision_en } = data.en.mvv;
 
 function App() {
   const { lang, setLang } = useContext(languageContext);
@@ -22,9 +19,7 @@ function App() {
         <div className="flex flex-col gap-[64px]">
           <Header />
           <h1 className="text-[calc(var(--h1-low))]">
-            {lang === "es"
-              ? "Misión, Visión, y Valores"
-              : "Mission, Vision, and Values"}
+            {lang === "es" ? "Misión y Visión" : "Mission and Vision"}
           </h1>
           <article>
             <h2 className="text-[calc(var(--h2-low))]">
