@@ -51,8 +51,6 @@ function Header() {
       path = path.replace(`/${params.lang}`, "");
     }
     path = `${lang !== "es" ? `/${lang}` : ""}${path}`;
-    console.log(path);
-
     navigate(path);
   }
 
@@ -99,8 +97,10 @@ function Header() {
               onClick={handleLangMenu}
               className="flex items-center gap-1"
             >
-              <span>{languages[lang as keyof typeof languages]}</span>
-              <span className="">
+              <span className="min-w-[90px] text-left">
+                {languages[lang as keyof typeof languages]}
+              </span>
+              <span>
                 <IconLang />
               </span>
             </button>
@@ -111,7 +111,7 @@ function Header() {
             className="transition-all duration-300 ease-in-out
             max-h-0 overflow-hidden
             absolute z-50
-            min-w-[calc(48px+48px+16px)]
+            min-w-[134px]
             right-0 top-[100%]
             bg-[var(--color-secondary-light)] dark:bg-[var(--color-secondary-dark)]
             text-[var(--color-dark)] dark:text-[var(--color-light)]

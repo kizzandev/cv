@@ -12,22 +12,38 @@ import {
 
 import { languageContext } from "../Root";
 
-/**
- * Bento component
- * grid
- */
-
 const data_ar = data.ar.bento;
 const data_en = data.en.bento;
 
-export default function BentoWIP() {
-  // We only want title and description from the RSS feed
-  // item[0].title and item[0].description
-  // Get RSS feed from
-  // blog.kizzan.dev/rss.xml IF lang is "es"
-  // blog.kizzan.dev/en/rss.xml IF lang is "en"
-  // Fetch RSS feed
+const getBlogRSS = async (lang: string) => {
+  try {
+    const parser = new DOMParser();
+    let url = "https://blog.kizzan.dev/rss.xml";
+    if (lang === "en") {
+      url = "https://blog.kizzan.dev/en/rss.xml";
+    }
 
+    const rss = await fetch(url);
+    const xmldoc = parser.parseFromString(await rss.text(), "text/xml");
+    const item = xmldoc.getElementsByTagName("item")[0];
+    const title = item.getElementsByTagName("title")[0].textContent;
+    const description = item.getElementsByTagName("description")[0].textContent;
+    return { title: title, description: description };
+  } catch (error) {
+    let msgTitle = "Parece que hubo un error";
+    let msgDescription = "Siempre podés visitar mi blog en blog.kizzan.dev";
+    if (lang === "en") {
+      msgTitle = "There was an error";
+      msgDescription = "You can always visit my blog at blog.kizzan.dev/en";
+    }
+    return {
+      title: msgTitle,
+      description: msgDescription,
+    };
+  }
+};
+
+export default function Bento() {
   const { lang } = useContext(languageContext);
 
   const [blogTitle, setBlogTitle] = useState(
@@ -37,36 +53,14 @@ export default function BentoWIP() {
     lang === "es" ? "Cargando..." : "Loading..."
   );
 
-  const fetchRSS = async () => {
-    const response = await fetch(
-      lang === "es"
-        ? "https://blog.kizzan.dev/rss.xml"
-        : "https://blog.kizzan.dev/en/rss.xml"
-    );
-    const data = await response.text();
-
-    if (!data) return;
-
-    // Find first index of <item>
-    const articleIndex = data.indexOf("<item>");
-    // Find first appeareance of <title>
-    const articleTitleIndex = data.indexOf("<title>", articleIndex);
-    const articleEndTitleIndex = data.indexOf("</title>", articleTitleIndex);
-    setBlogTitle(data.substring(articleTitleIndex + 7, articleEndTitleIndex));
-    // Find first appeareance of <description>
-    const articleDescriptionIndex = data.indexOf(
-      "<description>",
-      articleEndTitleIndex
-    );
-    const articleEndDescriptionIndex = data.indexOf(
-      "</description>",
-      articleDescriptionIndex
-    );
-    setBlogDescription(
-      data.substring(articleDescriptionIndex + 13, articleEndDescriptionIndex)
-    );
-  };
-  fetchRSS();
+  useEffect(() => {
+    getBlogRSS(lang).then((feed) => {
+      if (feed) {
+        setBlogTitle(feed.title!);
+        setBlogDescription(feed.description!);
+      }
+    });
+  }, [lang]);
 
   // Flag alt text
   const [flagAlt, setFlagAlt] = useState(
@@ -79,9 +73,6 @@ export default function BentoWIP() {
 
   return (
     <article className="flex flex-col gap-4">
-      {/* MARK: TOP BENTO
-       */}
-      {/* set all widts to the same */}
       <section
         id="bento"
         className="grid grid-cols-[18] grid-rows-4 gap-4
@@ -225,7 +216,7 @@ export default function BentoWIP() {
             </p> */}
         </article>
 
-        {/* MARK: TOOLS
+        {/* MARK: NODEJS
          */}
         <article
           className="flex items-center min-h-[100px] relative overflow-hidden
@@ -244,6 +235,8 @@ export default function BentoWIP() {
           </p>
         </article>
 
+        {/* MARK: NEXTJS
+         */}
         <article
           className="flex items-center min-h-[100px] relative overflow-hidden
         col-span-full md:col-[5/span_4] row-[3/span_1]"
@@ -255,6 +248,8 @@ export default function BentoWIP() {
           </p>
         </article>
 
+        {/* MARK: REACTJS
+         */}
         <article
           className="flex items-center min-h-[100px] relative overflow-hidden
         col-span-full md:col-[9/span_4] row-[3/span_1]"
@@ -266,6 +261,8 @@ export default function BentoWIP() {
           </p>
         </article>
 
+        {/* MARK: PROBLEMS
+         */}
         <article
           className="flex items-center min-h-[100px] relative overflow-hidden
         col-span-full md:col-[1/span_4] row-[4/span_1]"
@@ -277,6 +274,8 @@ export default function BentoWIP() {
           </p>
         </article>
 
+        {/* MARK: TEAM
+         */}
         <article
           className="flex items-center min-h-[100px] relative overflow-hidden
         col-span-full  md:col-[5/span_4] row-[4/span_1]"
@@ -288,6 +287,8 @@ export default function BentoWIP() {
           </p>
         </article>
 
+        {/* MARK: AUTHOR
+         */}
         <article
           className="flex items-center min-h-[100px] relative overflow-hidden
         col-span-full  md:col-[9/span_4] row-[4/span_1]"
