@@ -70,30 +70,13 @@
         localStorage.theme = "light";
       }
 
-      const langParam = url.searchParams.get("lang");
-      if (
-        langParam === "es" ||
-        (!langParam &&
-          (localStorage.lang === "es" ||
-            (!("lang" in localStorage) &&
-              window.navigator.language.includes("es"))))
-      ) {
-        document.documentElement.lang = "es";
-        localStorage.lang = "es";
-        url.searchParams.set("lang", "es");
-      } else if (
-        langParam === "en" ||
-        (!langParam &&
-          (localStorage.lang === "en" ||
-            (!("lang" in localStorage) &&
-              window.navigator.language.includes("en"))))
-      ) {
-        localStorage.lang = "en";
-        url.searchParams.set("lang", "en");
+      const langByURL = url.pathname.split("/")[1];
+      if (langByURL === "en") {
+        document.documentElement.lang = "en";
       } else {
-        localStorage.lang = "en";
-        url.searchParams.set("lang", "en");
+        document.documentElement.lang = "es";
       }
+
       window.history.replaceState({}, "", url);
     </script>
   </head>

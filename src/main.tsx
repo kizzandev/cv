@@ -16,6 +16,11 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
+    path: "/en",
+    element: <App />,
+    errorElement: <ErrorPage />,
+  },
+  {
     path: "/mvv",
     element: <Mvv />,
   },

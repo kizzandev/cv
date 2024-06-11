@@ -6,7 +6,6 @@ import {
   IconLinkedin,
   IconBlog,
   IconCV,
-  IconLang,
   IconTheme,
 } from "./icons";
 
@@ -21,7 +20,6 @@ const {
   title_github,
   title_blog,
   title_download_cv,
-  title_change_lang,
   title_change_theme,
 } = data.ar.socials;
 
@@ -31,23 +29,20 @@ const {
   title_github: title_github_en,
   title_blog: title_blog_en,
   title_download_cv: title_download_cv_en,
-  title_change_lang: title_change_lang_en,
   title_change_theme: title_change_theme_en,
 } = data.en.socials;
 
 const mailto = `mailto:${email}`;
 
 function Socials() {
-  const { lang, setLang } = useContext(languageContext);
+  const { lang } = useContext(languageContext);
 
   const [cvHref, setCVHref] = useState(
     `/${lang === "es" ? "ar" : "en"} Kevin S Zanzi CV.pdf`
   );
-  const [toLang, setToLang] = useState(lang === "es" ? "inglés" : "spanish");
 
   useEffect(() => {
     setCVHref(`/${lang === "es" ? "ar" : "en"} Kevin S Zanzi CV.pdf`);
-    setToLang(lang === "es" ? "inglés" : "spanish");
   }, [lang]);
 
   const [theme, setTheme] = useState(localStorage.theme);
@@ -143,39 +138,6 @@ function Socials() {
       </section>
 
       <section className="flex flex-row gap-4 justify-end">
-        <button
-          title={
-            lang === "es"
-              ? `${title_change_lang} ${toLang}`
-              : `${title_change_lang_en} ${toLang}`
-          }
-          aria-label={
-            lang === "es"
-              ? `${title_change_lang} ${toLang}`
-              : `${title_change_lang_en} ${toLang}`
-          }
-          onClick={() => {
-            const current = document.documentElement.lang;
-            const next = current === "en" ? "es" : "en";
-            localStorage.lang = next;
-            document.documentElement.lang = next;
-            setLang(next);
-
-            const url = new URL(window.location.href);
-            url.searchParams.set("lang", next);
-            window.history.replaceState({}, "", url);
-          }}
-          className="hover:text-[var(--color-accent-light)] dark:hover:text-[var(--color-accent-dark)]"
-        >
-          <IconLang
-            width="48px"
-            height="48px"
-            className="hover:bg-[var(--bg-secondary)]
-                            transition-colors duration-150
-                            rounded-lg p-1"
-          />
-        </button>
-
         <button
           title={
             lang === "es"
