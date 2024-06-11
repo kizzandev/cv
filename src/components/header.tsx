@@ -1,10 +1,11 @@
 import Socials from "./socials";
 
 import data from "../assets/data/lang.json";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { languageContext } from "../Root";
 import { IconLang } from "./icons";
+import { useParams, useNavigate } from "react-router-dom";
 
 const { title_name, title_tld } = data.common;
 
@@ -15,6 +16,9 @@ export const languages = {
 
 function Header() {
   const { lang, setLang } = useContext(languageContext);
+  const params = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   function handleLangMenu(
     e: React.MouseEvent<HTMLButtonElement, MouseEvent> | null
@@ -36,6 +40,24 @@ function Header() {
         langMenu.setAttribute("data-open", "false");
       }
     }
+  }
+
+  function handleLangChange(lang: string) {
+    setLang(lang as keyof typeof languages);
+    handleLangMenu(null);
+
+    let path = location.pathname;
+    if (params.lang) {
+      path = path.replace(`/${params.lang}`, "");
+    }
+    path = `${lang !== "es" ? `/${lang}` : ""}${path}`;
+    console.log(path);
+
+    navigate(path);
+  }
+
+  function handleLangNav(to: string) {
+    return `/${params.lang ? params.lang + "/" : ""}${to}`;
   }
 
   return (
@@ -65,10 +87,10 @@ function Header() {
         "
         >
           <li>
-            <Link to={"/"}>Home</Link>
+            <Link to={handleLangNav("")}>Home</Link>
           </li>
           <li>
-            <Link to={"/mvv"}>MVV</Link>
+            <Link to={handleLangNav("mv")}>MV</Link>
           </li>
           <li>
             <button
@@ -108,16 +130,12 @@ function Header() {
               {Object.entries(languages).map(([lang_, label], idx) =>
                 lang === lang_ ? null : (
                   <li key={idx}>
-                    <Link
-                      onClick={() => {
-                        setLang(lang_ as keyof typeof languages);
-                        handleLangMenu(null);
-                      }}
+                    <button
+                      onClick={() => handleLangChange(lang_)}
                       className="px-2 py-1"
-                      to={`/${lang_ === "en" ? "en" : ""}`}
                     >
                       {label}
-                    </Link>
+                    </button>
                   </li>
                 )
               )}

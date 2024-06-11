@@ -9,22 +9,20 @@ import Mvv from "./pages/Mvv.tsx";
 import "./index.css";
 import ErrorPage from "./pages/Error.tsx";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/en",
-    element: <App />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/mvv",
-    element: <Mvv />,
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: ":lang?/",
+      element: <App />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: ":lang?/mv",
+      element: <Mvv />,
+    },
+  ],
+  {}
+);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
