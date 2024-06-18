@@ -1,29 +1,37 @@
-import { useContext } from "react";
+import { useState, createContext } from "react";
 
 import Header from "./components/header";
-import About from "./components/about";
-import Experience from "./components/experience";
-import Technologies from "./components/technologies";
-import Bento from "./components/bento";
 
 import { backgroundStyles } from "./components/styles";
 
-import { languageContext } from "./Root";
+import { Outlet } from "react-router-dom";
+
+export const languageContext = createContext({
+  lang: document.documentElement.lang,
+  /*@ts-ignore*/
+  setLang: (lang: string) => {},
+});
+
+export const themeContext = createContext({
+  theme: localStorage.theme,
+  /*@ts-ignore*/
+  setTheme: (theme: "dark" | "light") => {},
+});
 
 function App() {
-  const { lang, setLang } = useContext(languageContext);
+  const [lang, setLang] = useState(document.documentElement.lang);
+  const [theme, setTheme] = useState(localStorage.theme || "dark");
 
   return (
     <languageContext.Provider value={{ lang, setLang }}>
-      <div className={backgroundStyles}>
-        <div className="flex flex-col gap-[64px]">
-          <Header />
-          <About />
-          <Bento />
-          <Experience />
-          <Technologies />
+      <themeContext.Provider value={{ theme, setTheme }}>
+        <div className={backgroundStyles}>
+          <div className="flex flex-col gap-[48px]">
+            <Header />
+            <Outlet />
+          </div>
         </div>
-      </div>
+      </themeContext.Provider>
     </languageContext.Provider>
   );
 }

@@ -3,9 +3,11 @@ import Socials from "./socials";
 import data from "../assets/data/lang.json";
 import { Link, useLocation } from "react-router-dom";
 import { useContext } from "react";
-import { languageContext } from "../Root";
+import { languageContext } from "../App";
 import { IconLang } from "./icons";
 import { useParams, useNavigate } from "react-router-dom";
+
+import { handleLangNav } from "../utils/nav";
 
 const { title_name, title_tld } = data.common;
 
@@ -54,10 +56,6 @@ function Header() {
     navigate(path);
   }
 
-  function handleLangNav(to: string) {
-    return `/${params.lang ? params.lang + "/" : ""}${to}`;
-  }
-
   return (
     <header className="flex flex-col gap-[32px]">
       <h1
@@ -85,10 +83,9 @@ function Header() {
         "
         >
           <li>
-            <Link to={handleLangNav("")}>Home</Link>
-          </li>
-          <li>
-            <Link to={handleLangNav("mv")}>MV</Link>
+            <Link to={handleLangNav("", params.lang)}>
+              {lang === "es" ? "Inicio" : "Home"}
+            </Link>
           </li>
           <li>
             <button
@@ -132,7 +129,7 @@ function Header() {
                   <li key={idx}>
                     <button
                       onClick={() => handleLangChange(lang_)}
-                      className="px-2 py-1"
+                      className="px-2 py-1 w-full text-left"
                     >
                       {label}
                     </button>
