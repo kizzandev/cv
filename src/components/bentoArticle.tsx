@@ -59,7 +59,7 @@ export default function BentoArticle({
         bg-[var(--bg-secondary)] dark:bg-transparent
          border-[1px] border-[var(--bg-secondary)]
         _dark:bg-gradient-to-tr _dark:from-[var(--bg-primary-dark)] _dark:to-[var(--bg-secondary)]
-        col-span-full row-span-2
+        col-span-full ${!mdRowSpan && !lgRowSpan && !xlRowSpan ? 'row-span-2' : ''}
         overflow-hidden
         ${someClass}`}
     >

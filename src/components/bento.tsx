@@ -79,8 +79,9 @@ export default function Bento() {
       id="bento"
       className="grid gap-4
            grid-cols-6
-          _grid-rows-8
-          grid-rows-[repeat(8,_minmax(0,_78px))]
+           md:grid-rows-5
+          _lg:grid-rows-8
+          lg:grid-rows-[repeat(8,_minmax(0,_78px))]
           transition-all duration-300 ease-in-out
           "
     >
@@ -90,9 +91,10 @@ export default function Bento() {
       <BentoArticle
         title={lang === "es" ? `Experiencia` : "Experience"}
         mdColStart="1" mdColSpan="3"
-        mdRowStart="1" mdRowSpan="2"
+        mdRowStart="1" mdRowSpan="1"
         lgColStart="1" lgColSpan="2"
         lgRowStart="1" lgRowSpan="4"
+        className="max-h-[500px] overflow-hidden"
       >
         <section className="overflow-y-scroll overflow-x-hidden flex flex-col gap-4 my-1 py-4 pr-4">
           {lang === "es"
@@ -139,7 +141,7 @@ export default function Bento() {
       <BentoArticle
           title={lang === "es" ? data_ar.job_title : data_en.job_title}
           mdColStart="4" mdColSpan="3"
-          mdRowStart="1" mdRowSpan="2"
+          mdRowStart="1" mdRowSpan="1"
           lgColStart="3" lgColSpan="2"
           lgRowStart="1" lgRowSpan="4"
         >
@@ -160,7 +162,7 @@ export default function Bento() {
       {/* prettier-ignore */}
       <BentoArticle
           mdColStart="1" mdColSpan="2"
-          mdRowStart="3" mdRowSpan="2"
+          mdRowStart="2" mdRowSpan="1"
           lgColStart="5" lgColSpan="2"
           lgRowStart="1" lgRowSpan="2"
           title={<>{lang === "es" ? 'Misión' : 'Mission'} & {lang === "es" ? 'Visión' : 'Vision'}</>}
@@ -186,7 +188,7 @@ export default function Bento() {
       <BentoArticle
           title={lang === "es" ? 'Trabajemos juntos' : 'Let\'s work together'}
           mdColStart="3" mdColSpan="4"
-          mdRowStart="3" mdRowSpan="2"
+          mdRowStart="2" mdRowSpan="1"
           lgColStart="5" lgColSpan="2"
           lgRowStart="3" lgRowSpan="2"
         >
@@ -208,7 +210,7 @@ export default function Bento() {
       <BentoArticle
           title={lang === "es" ? 'Proyectos' : 'Projects'}
           mdColStart="1" mdColSpan="4"
-          mdRowStart="5" mdRowSpan="2"
+          mdRowStart="3" mdRowSpan="2"
           lgColStart="1" lgColSpan="2"
           lgRowStart="5" lgRowSpan="4"
         >
@@ -233,7 +235,7 @@ export default function Bento() {
       <BentoArticle
           title={lang === "es" ? data_ar.languages : data_en.languages}
           mdColStart="5" mdColSpan="2"
-          mdRowStart="5" mdRowSpan="1"
+          mdRowStart="3" mdRowSpan="1"
           lgColStart="3" lgColSpan="2"
           lgRowStart="5" lgRowSpan="2"
         >
@@ -263,11 +265,11 @@ export default function Bento() {
               : 'A little more about me'}/**/
             title={lang === "es" ? 'En construcción' : 'Work in progress'}
           mdColStart="5" mdColSpan="2"
-          mdRowStart="6" mdRowSpan="1"
+          mdRowStart="4" mdRowSpan="1"
           lgColStart="3" lgColSpan="2"
           lgRowStart="7" lgRowSpan="2"
-          className="_[&>h2]:w-full _[&>h2]:h-full _[&>h2]:text-[calc(var(--h5-low))]
-          grid place-items-center w-full h-full
+          className="_[&>h2]:w-full _[&>h2]:h-full [&>h2]:text-[calc(var(--h5-low))] lg:[&>h2]:text-[calc(var(--h3-low))]
+          hidden md:grid place-items-center w-full h-full
           !bg-secondary bg-opacity-5
           "
         >
@@ -282,7 +284,7 @@ export default function Bento() {
       <BentoArticle
           title={lang === "es" ? data_ar.blog_title : data_en.blog_title}
           mdColStart="1" mdColSpan="6"
-          mdRowStart="7" mdRowSpan="2"
+          mdRowStart="5" mdRowSpan="1"
           lgColStart="5" lgColSpan="2"
           lgRowStart="5" lgRowSpan="4"
         >
