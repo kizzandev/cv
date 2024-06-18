@@ -1,29 +1,29 @@
 import { useContext, useEffect } from "react";
-import { useRouteError } from "react-router-dom";
 import { languageContext } from "../App";
 
-export default function ErrorPage() {
+export default function Ohno() {
   const { lang } = useContext(languageContext);
 
-  useEffect(() => {
-    document.title = `Error | ${document.title}`;
-
-    return () => {
-      document.title = document.title.replace(`Error | `, "");
-    };
-  }, [lang]);
-
-  const error = useRouteError() as {
-    statusText: string;
-    message: string;
-    status: number;
+  const error = {
+    statusText:
+      lang === "es"
+        ? "No Disponible por Razones Legales"
+        : "Unavailable For Legal Reasons",
+    status: 451,
   };
-  console.error(error);
 
   const genericMessage =
     lang === "es"
       ? "Parece que ha ocurrido un error inesperado."
       : "Seems an unexpected error has occurred.";
+
+  useEffect(() => {
+    document.title = `Whoops! | ${document.title}`;
+
+    return () => {
+      document.title = document.title.replace(`Whoops! | `, "");
+    };
+  }, [lang]);
 
   return (
     <article
@@ -36,8 +36,7 @@ export default function ErrorPage() {
           {genericMessage}
         </p>
         <p className="text-center text-lg text-gray-700 dark:text-gray-300">
-          Error {error.status ?? 9001}:{" "}
-          <i>{error.statusText || error.message}</i>
+          Error {error.status}: <i>{error.statusText}</i>
         </p>
       </section>
     </article>

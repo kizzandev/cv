@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import data from "../assets/data/lang.json";
-import { languageContext } from "../Root";
+import { languageContext } from "../App";
 
 const experience = data.ar.experience;
 const experience_en = data.en.experience;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CV | Kizzan</title>
+    <title>Kizzan.dev</title>
 
     <!-- METADATA -->
     <link rel="alternate" href="https://cv.kizzan.dev/?lang=en" hreflang="en" />
@@ -27,7 +27,7 @@
     <meta name="author" content="Kizzan" />
 
     <!-- SOCIAL METADATA -->
-    <meta property="og:title" content="CV | Kizzan" />
+    <meta property="og:title" content="Kizzan.dev" />
     <meta
       property="og:description"
       content="Software developer with hands-on experience in remote frontend development, specializing in React, JavaScript, TypeScript, and Tailwind CSS. Proficient in Agile methodologies, thriving in collaborative squad environments to deliver innovative solutions efficiently."
@@ -36,10 +36,10 @@
     <meta property="og:url" content="https://cv.kizzan.dev/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en" />
-    <meta property="og:site_name" content="CV | Kizzan" />
+    <meta property="og:site_name" content="Kizzan.dev" />
 
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="CV | Kizzan" />
+    <meta property="twitter:title" content="Kizzan.dev" />
     <meta
       property="twitter:description"
       content="Software developer with hands-on experience in remote frontend development, specializing in React, JavaScript, TypeScript, and Tailwind CSS. Proficient in Agile methodologies, thriving in collaborative squad environments to deliver innovative solutions efficiently."
@@ -56,15 +56,16 @@
     <script>
       const url = new URL(window.location.href);
 
+      const paramsTheme = url.searchParams.get("theme");
       if (
-        url.searchParams.get("theme") !== "light" &&
-        (localStorage.theme === "dark" ||
-          (!("theme" in localStorage) &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches))
+        (paramsTheme !== "light" && paramsTheme === "dark") ||
+        (!paramsTheme &&
+          (localStorage.theme === "dark" ||
+            (!("theme" in localStorage) &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches)))
       ) {
         document.documentElement.classList.add("dark");
         localStorage.theme = "dark";
-        url.searchParams.set("theme", "dark");
       } else {
         document.documentElement.classList.remove("dark");
         localStorage.theme = "light";

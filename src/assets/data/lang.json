@@ -10,6 +10,7 @@
     "years_of_experience": "1"
   },
   "ar": {
+    "phrase": "Quienes aportan el mayor valor son los que realmente sobresalen.",
     "socials": {
       "title_email": "Enviar un correo electrónico a Kizzan dev",
       "title_linkedin": "Visitar el perfil de LinkedIn de Kizzan dev",
@@ -46,7 +47,11 @@
     "experience": [
       {
         "title": "Desarrollador",
-        "location": "Gobierno de la Ciudad de Buenos Aires | Remoto | Buenos Aires, Argentina",
+        "company": "Gobierno de la Ciudad de Buenos Aires",
+        "mode": "Remoto",
+        "location": "Buenos Aires, Argentina",
+        "startYear": "2023",
+        "endYear": "2023",
         "description": "Contrato para desarrollar una aplicación web para la gestión de socios y eventos, formando parte de un Agile Squad multidisiplinario participando en el desarrollo de la base de datos SQL y Frontend.",
         "bullets": [
           "Colaboré en el diseño de la arquitectura de la base de datos, lo que  condujo a una mejora del 25% en la escalabilidad del sistema.",
@@ -91,9 +96,24 @@
     "mvv": {
       "mission": "Aportar el máximo valor a mis clientes mediante soluciones de calidad. Mantener un crecimiento constante y aprendizaje continuo, adoptando las mejores prácticas para un desarrollo eficiente y efectivo.",
       "vision": "Ser el referente en la industria del software, reconocido por inspirar confianza, admiración, e impulsar la innovación en cada paso de nuestro camino."
-    }
+    },
+    "projects": [
+      {
+        "title": "Blog Personal",
+        "description": "Blog personal donde comparto mis experiencias y conocimientos en el desarrollo de software. Creado con Astro.",
+        "advocacy": "",
+        "link": "https://blog.kizzan.dev"
+      },
+      {
+        "title": "Portfolio Web",
+        "description": "Creado utilizando React.js, Tailwind CSS, react-router-dom, y TypeScript.",
+        "advocacy": "",
+        "link": "https://cv.kizzan.dev"
+      }
+    ]
   },
   "en": {
+    "phrase": "Those who bring the greatest value are the ones who truly excel.",
     "socials": {
       "title_email": "Send an email to Kizzan dev",
       "title_linkedin": "Visit Kizzan dev's LinkedIn profile",
@@ -130,7 +150,11 @@
     "experience": [
       {
         "title": "Developer",
-        "location": "City Government of Buenos Aires | Remote | Buenos Aires, Argentina",
+        "company": "City Government of Buenos Aires",
+        "mode": "Remote",
+        "location": "Buenos Aires, Argentina",
+        "startYear": "2023",
+        "endYear": "2023",
         "description": "Contracted to develop a web application for managing partners and events, as a member of a multidisciplinary Agile Squad involved in the development of the SQL database and the frontend application.",
         "bullets": [
           "Collaborated in the design of the database architecture, leading to a 25% improvement in system scalability.",
@@ -175,6 +199,20 @@
     "mvv": {
       "mission": "Deliver maximum value to my clients through quality solutions. Maintain constant growth and continuous learning, adopting best practices for efficient and effective development.",
       "vision": "Be the reference in the software industry, recognized for inspiring trust, admiration, and driving innovation at every step of our journey."
-    }
+    },
+    "projects": [
+      {
+        "title": "Personal Blog",
+        "description": "Personal blog where I share my experiences and knowledge in software development. Created with Astro.",
+        "advocacy": "",
+        "link": "https://blog.kizzan.dev/en"
+      },
+      {
+        "title": "Web Portfolio",
+        "description": "Created using React.js, Tailwind CSS, react-router-dom, and TypeScript.",
+        "advocacy": "",
+        "link": "https://cv.kizzan.dev/en"
+      }
+    ]
   }
 }

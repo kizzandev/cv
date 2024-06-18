@@ -76,19 +76,12 @@ My personal website. I am trying a new design and I hope you like it.
 - [x] Multi-language Support
   - [x] Spanish (AR)
   - [x] English
-- [ ] Language dropdown
-- [ ] Bento changes
-  - [ ] Componentize elements in code
-  - [ ] Add interactivity
-  - [ ] Add link to blog in "Latest Article"
+- [x] Language dropdown
+- [x] Bento changes
+  - [x] Componentize elements in code
+  - [x] Add interactivity
+  - [x] Add link to blog in "Latest Article"
   - [ ] Add a capstone project
-- [ ] Change the _Now: job title_ section to something else
-  - Options:
-    - [ ] Keep it as _Now: job title_
-    - [ ] Next live presentation: _Next on: [NAME OF THE EVENT]\(link)_
-    - [ ] Side job as in _Side job: [NAME OF THE JOB]\(link)_
-      - e.g. John Smith: on [Your new favorite tv show]\(link)
-    - [ ] YouTube Channel
 
 See the [open issues](https://github.com/kizzandev/cv/issues) for a full list of proposed features (and known issues).
 

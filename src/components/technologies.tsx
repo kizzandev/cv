@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import data from "../assets/data/lang.json";
-import { languageContext } from "../Root";
+import { languageContext } from "../App";
 
 const technologies = data.ar.technologies;
 const technologies_en = data.en.technologies;

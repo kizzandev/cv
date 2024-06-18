@@ -4,7 +4,7 @@ import data from "../assets/data/lang.json";
 const { title, text } = data.ar.summary;
 const { title: title_en, text: text_en } = data.en.summary;
 
-import { languageContext } from "../Root";
+import { languageContext } from "../App";
 
 export default function About() {
   const { lang } = useContext(languageContext);

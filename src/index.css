@@ -28,6 +28,7 @@
   --color-accent-light: #006f47;
   --color-accent-dark: #00ffa6;
 
+  --border-radius-4: 4px;
   --border-radius-8: 8px;
   --border-radius-16: 16px;
 
@@ -53,6 +54,7 @@
 
 * {
   position: relative;
+  scrollbar-width: thin;
 }
 
 html {
