@@ -24,7 +24,8 @@ const getBlogRSS = async (lang: string) => {
 
     const rss = await fetch(url);
     const xmldoc = parser.parseFromString(await rss.text(), "text/xml");
-    const item = xmldoc.getElementsByTagName("item")[0];
+    const item_length = xmldoc.getElementsByTagName("item").length;
+    const item = xmldoc.getElementsByTagName("item")[item_length - 1];
     const title = item.getElementsByTagName("title")[0].textContent;
     const description = item.getElementsByTagName("description")[0].textContent;
     const link = item.getElementsByTagName("link")[0].textContent;
