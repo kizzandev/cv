@@ -261,21 +261,16 @@ export default function Bento() {
           /*title={_bentoLink(lang === "es" ? '¿Me invitás un café?' : 'Would you buy me a coffee?',
             "", true, undefined,
             "grid place-items-center w-full h-full !text-[calc(var(--h5-low))]")}/**/
-            /*title={lang === "es" ? 'Un poco más sobre mí' 
-              : 'A little more about me'}/**/
-            title={lang === "es" ? 'En construcción' : 'Work in progress'}
+            title={lang === "es" ? 'Un poco más sobre mí' 
+              : 'A little more about me'}
           mdColStart="5" mdColSpan="2"
           mdRowStart="4" mdRowSpan="1"
           lgColStart="3" lgColSpan="2"
           lgRowStart="7" lgRowSpan="2"
-          className="_[&>h2]:w-full _[&>h2]:h-full [&>h2]:text-[calc(var(--h5-low))] lg:[&>h2]:text-[calc(var(--h3-low))]
-          hidden md:grid place-items-center w-full h-full
-          !bg-secondary bg-opacity-5
-          "
         >
-          {/* {lang === "es" ? 
+          {lang === "es" ? 
           _bentoLink('Conoceme', 'https://blog.kizzan.dev/article/quien-es-kevin', true) 
-        : _bentoLink('Know me', 'https://blog.kizzan.dev/en/article/who-is-kevin', true)} */}
+        : _bentoLink('Know me', 'https://blog.kizzan.dev/en/article/who-is-kevin', true)}
           </BentoArticle>
 
       {/* MARK: BLOG LAST ARTICLE
