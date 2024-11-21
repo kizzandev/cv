@@ -7,6 +7,7 @@
     "github": "https://github.com/kizzandev",
     "blog": "https://blog.kizzan.dev/",
     "langs": ["ar", "en"],
+    "languages": ["Español (AR)", "English"],
     "years_of_experience": "1"
   },
   "ar": {
@@ -46,7 +47,7 @@
     },
     "experience": [
       {
-        "title": "Desarrollador",
+        "title": "Desarrollador de Software",
         "company": "Gobierno de la Ciudad de Buenos Aires",
         "mode": "Remoto",
         "location": "Buenos Aires, Argentina",
@@ -54,10 +55,9 @@
         "endYear": "2023",
         "description": "Contrato para desarrollar una aplicación web para la gestión de socios y eventos, formando parte de un Agile Squad multidisiplinario participando en el desarrollo de la base de datos SQL y Frontend.",
         "bullets": [
-          "Colaboré en el diseño de la arquitectura de la base de datos, lo que  condujo a una mejora del 25% en la escalabilidad del sistema.",
-          "Diseñé y desarrollé la lógica de enrutamiento para la gestión de socios y  eventos, optimizando la navegación del usuario y reduciendo el tiempo  de carga en un 40%.",
-          "Coordiné la organización del equipo para garantizar una colaboración  efectiva en el desarrollo de la aplicación web, facilitando la  comunicación y aumentando la productividad del equipo en un 30%.",
-          "Establecí una comunicación fluida con el Product Owner para comprender  los requisitos del proyecto y garantizar una alineación constante, lo  que resultó en una disminución del 19% en los errores de interpretación y  una entrega más precisa de funcionalidades clave."
+          "Coordiné un squad ágil de 8 personas para lanzar un sitio web Full Stack basado en crear y gestionar socios y eventos, reduciendo los tiempos de la creación de eventos de una semana a menos de un día.",
+          "Rediseñé la lógica de enrutamiento de un código legacy con React para la aplicación, optimizando la navegación y mejorando la experiencia del usuario en un 42%.",
+          "Colaboré en la implementación de una imagen Docker para unificar el entorno de desarrollo, eliminando configuraciones locales y mejorando la eficiencia en un 53%."
         ]
       }
     ],
@@ -149,7 +149,7 @@
     },
     "experience": [
       {
-        "title": "Developer",
+        "title": "Software Developer",
         "company": "City Government of Buenos Aires",
         "mode": "Remote",
         "location": "Buenos Aires, Argentina",
@@ -157,10 +157,9 @@
         "endYear": "2023",
         "description": "Contracted to develop a web application for managing partners and events, as a member of a multidisciplinary Agile Squad involved in the development of the SQL database and the frontend application.",
         "bullets": [
-          "Collaborated in the design of the database architecture, leading to a 25% improvement in system scalability.",
-          "Designed and developed routing logic for managing partners and events, optimizing user navigation and reducing load time by 40%.",
-          "Coordinated team organization to ensure effective collaboration in web application development, facilitating communication and increasing team productivity by 30%.",
-          "Established open communication with the Product Owner to understand project requirements and ensure constant alignment, resulting in a 19% decrease in interpretation errors and more accurate delivery of key functionalities."
+          "Coordinated an agile squad of 8 people to launch a Full Stack website based on creating and managing partners and events, reducing event creation times from a week to less than a day.",
+          "I redesigned the routing logic of legacy code with React for the application, optimizing navigation and improving the user experience by 42%.",
+          "Collaborated in the deployment of a Docker image to unify the development environment, eliminating local configurations and improving efficiency by 53%."
         ]
       }
     ],

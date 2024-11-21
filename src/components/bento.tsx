@@ -100,29 +100,27 @@ export default function Bento() {
         <section className="overflow-y-scroll overflow-x-hidden flex flex-col gap-4 my-1 py-4 pr-4">
           {lang === "es"
             ? data.ar.experience.map(
-                ({ title, mode, company, startYear, endYear, description }) => (
+                ({ title, company, startYear, endYear, bullets }) => (
                   <>
                     {BentoExperienceEntry(
                       title,
-                      mode,
                       company,
                       startYear,
                       endYear,
-                      description
+                      bullets
                     )}
                   </>
                 )
               )
             : data.en.experience.map(
-                ({ title, mode, company, startYear, endYear, description }) => (
+                ({ title, company, startYear, endYear, bullets }) => (
                   <>
                     {BentoExperienceEntry(
                       title,
-                      mode,
                       company,
                       startYear,
                       endYear,
-                      description
+                      bullets
                     )}
                   </>
                 )
