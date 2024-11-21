@@ -25,7 +25,6 @@ function Header() {
   function handleLangMenu(
     e: React.MouseEvent<HTMLButtonElement, MouseEvent> | null
   ) {
-    // Only open when clicking on the langMenuIcon
     const langMenuIcon = document.getElementById("langMenuIcon");
     const langMenu = document.getElementById("langMenu");
 
@@ -49,9 +48,7 @@ function Header() {
     handleLangMenu(null);
 
     let path = location.pathname;
-    if (params.lang) {
-      path = path.replace(`/${params.lang}`, "");
-    }
+    if (params.lang) path = path.replace(`/${params.lang}`, "");
     path = `${lang !== "es" ? `/${lang}` : ""}${path}`;
     navigate(path);
   }
@@ -62,13 +59,15 @@ function Header() {
         className="text-[calc(var(--h2))] lg:text-[calc(var(--h1))]
       text-[var(--color-primary-light)] dark:text-[var(--color-primary-dark)]"
       >
-        {title_name}
-        <span
-          className="text-[var(--color-accent-light)]
+        <Link to={handleLangNav("", params.lang)}>
+          {title_name}
+          <span
+            className="text-[var(--color-accent-light)]
       dark:text-[var(--color-accent-dark)]"
-        >
-          {title_tld}
-        </span>
+          >
+            {title_tld}
+          </span>
+        </Link>
       </h1>
       <Socials />
       <nav className="ml-auto flex gap-4">
@@ -82,11 +81,6 @@ function Header() {
         [&>li:hover]:text-[var(--color-accent-light)] [&>li:hover]:dark:text-[var(--color-accent-dark)]
         "
         >
-          <li>
-            <Link to={handleLangNav("", params.lang)}>
-              {lang === "es" ? "Inicio" : "Home"}
-            </Link>
-          </li>
           <li>
             <button
               id="langMenuIcon"
