@@ -22,30 +22,8 @@ function Header() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  function handleLangMenu(
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent> | null
-  ) {
-    const langMenuIcon = document.getElementById("langMenuIcon");
-    const langMenu = document.getElementById("langMenu");
-
-    if (!langMenuIcon || !langMenu) return;
-
-    const isOpen = langMenu?.getAttribute("data-open") === "true";
-    langMenu.style.maxHeight = isOpen ? "0" : `${langMenu?.scrollHeight}px`;
-    langMenu.setAttribute("data-open", isOpen ? "false" : "true");
-
-    if (langMenu.getAttribute("data-open") === "true") {
-      const target = e?.target as HTMLElement;
-      if (!langMenu.contains(target) && !langMenuIcon?.contains(target)) {
-        langMenu.style.maxHeight = "0";
-        langMenu.setAttribute("data-open", "false");
-      }
-    }
-  }
-
   function handleLangChange(lang: string) {
     setLang(lang as keyof typeof languages);
-    handleLangMenu(null);
 
     let path = location.pathname;
     if (params.lang) path = path.replace(`/${params.lang}`, "");
@@ -77,27 +55,25 @@ function Header() {
         [&>li>button]:px-2 [&>li>button]:py-1
         [&>li]:transition-colors [&>li]:duration-150
         [&>li]:rounded-md
-        [&>li:hover]:bg-[var(--bg-secondary)]
         [&>li:hover]:text-[var(--color-accent-light)] [&>li:hover]:dark:text-[var(--color-accent-dark)]
         "
         >
-          <li>
-            <button
-              id="langMenuIcon"
-              aria-label="Change language"
-              onClick={handleLangMenu}
-              className="flex items-center gap-1"
-            >
-              <span className="min-w-[90px] text-left">
-                {languages[lang as keyof typeof languages]}
-              </span>
-              <span>
-                <IconLang />
-              </span>
-            </button>
+          <li
+            id="langMenuHover"
+            className="flex items-center gap-1 pl-2 pr-2 cursor-default
+            peer/lang
+            "
+            aria-label="Change language"
+            title="Change language"
+          >
+            <span className="min-w-[90px] text-left">
+              {languages[lang as keyof typeof languages]}
+            </span>
+            <span>
+              <IconLang />
+            </span>
           </li>
           <li
-            data-open="false"
             id="langMenu"
             className="transition-all duration-300 ease-in-out
             max-h-0 overflow-hidden
@@ -106,7 +82,10 @@ function Header() {
             right-0 top-[100%]
             bg-[var(--color-secondary-light)] dark:bg-[var(--color-secondary-dark)]
             text-[var(--color-dark)] dark:text-[var(--color-light)]
-            rounded-md shadow-md"
+            rounded-md shadow-md
+            hover:max-h-max
+            peer-hover/lang:max-h-max
+            "
           >
             <ul
               className="[&>li:hover]:bg-[var(--color-secondary-dark)]
