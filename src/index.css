@@ -1,25 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  color-scheme: light dark;
+  color-scheme: dark;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --bg-primary-dark: #16161d;
-  --bg-primary-light: #e2e2e9;
+  --bg-primary: #16161d;
   --bg-secondary: hsla(205, 49%, 69%, 0.2);
 
-  --color-dark: #18181b;
-  --color-light: #f4f4f5;
+  --text-color: hsl(240, 5%, 96%);
+  --text-color-secondary: hsl(240, 5%, 96%, 0.8);
 
-  --color-primary-light: #006699;
+  --color-primary-light: hsl(200, 100%, 30%);
+  --color-primary-light-hover: hsl(200, 100%, 30%, 0.65);
   --color-primary-dark: #66ccff;
 
   --color-secondary-light: #89b6d7;

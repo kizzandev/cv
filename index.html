@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -24,7 +24,7 @@
       name="keywords"
       content="CV, Curriculum Vitae, Kizzan, Software Developer, Frontend Developer, React, JavaScript, TypeScript, Tailwind CSS, Agile, Remote, English, Spanish, Español, Inglés, Fullstack, Web Developer, Web Development, Kevin, Zanzi, Kevin Zanzi, Next, Next.js, Node, Node.js, Express, Express.js, SQL, MySQL"
     />
-    <meta name="author" content="Kizzan" />
+    <meta name="author" content="Kevin S Zanzi" />
 
     <!-- SOCIAL METADATA -->
     <meta property="og:title" content="Kizzan.dev" />
@@ -54,29 +54,31 @@
 
     <!-- SCRIPT -->
     <script>
+      // STEPS:
+      // 1. check for params cv.kizzan.dev/?lang=es
+      // 2. else check for LocalStorage.lang
+      // 3. else check for browser language
+      // 4. else "es"
+
       const url = new URL(window.location.href);
+      const paramsLang = url.searchParams.get("lang");
+      const LANGS = ["ag", "en"];
 
-      const paramsTheme = url.searchParams.get("theme");
-      if (
-        (paramsTheme !== "light" && paramsTheme === "dark") ||
-        (!paramsTheme &&
-          (localStorage.theme === "dark" ||
-            (!("theme" in localStorage) &&
-              window.matchMedia("(prefers-color-scheme: dark)").matches)))
-      ) {
-        document.documentElement.classList.add("dark");
-        localStorage.theme = "dark";
+      let lang = "ag";
+      if (LANGS.includes(paramsLang)) {
+        lang = paramsLang;
+      } else if (LANGS.includes(localStorage.lang)) {
+        lang = localStorage.lang;
       } else {
-        document.documentElement.classList.remove("dark");
-        localStorage.theme = "light";
+        let langCode = navigator.language.split("-")[0];
+        langCode = langCode === "es" ? "ag" : langCode;
+        if (LANGS.includes(langCode)) {
+          lang = langCode;
+        }
       }
 
-      const langByURL = url.pathname.split("/")[1];
-      if (langByURL === "en") {
-        document.documentElement.lang = "en";
-      } else {
-        document.documentElement.lang = "es";
-      }
+      document.documentElement.lang = lang === "ag" ? "es" : lang;
+      localStorage.lang = lang;
 
       window.history.replaceState({}, "", url);
     </script>

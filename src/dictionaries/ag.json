@@ -1,0 +1,48 @@
+{
+  "header": {
+    "labels": {
+      "github": "GitHub de Kevin",
+      "twitter": "Twitter de Kevin",
+      "linkedin": "LinkedIn de Kevin"
+    }
+  },
+  "summary": {
+    "tags": [
+      "Desarrollador web fullstack",
+      "Desarrollador de software",
+      "en: Argentina",
+      "exp: 2+ años",
+      "idioma: Español",
+      "idioma: Inglés"
+    ],
+    "toEnglish": "Cambiar idioma a Inglés",
+    "toSpanish": "Cambiar idioma a Español"
+  },
+  "callToAction": {
+    "title": "Innovemos juntos",
+    "email": "Mandame un correo",
+    "linkedin": "O contactame a través de"
+  },
+  "experience": {
+    "title": "Experiencia",
+    "items": [
+      {
+        "date_start": "2025",
+        "date_end": "2025",
+        "title": "Software Developer",
+        "org": "Autónomo",
+        "desc": "Desarrollé una página web de currículum simple y minimalista para mi persona."
+      },
+      {
+        "date_start": "2023",
+        "date_end": "2023",
+        "title": "Software Developer",
+        "org": "Gobierno de la Ciudad de Buenos Aires",
+        "desc": "Coordiné una equipo agil de 8 personas para lanzar una página web fullstack para la gestión de eventos y de los socios, reduciendo los tiempos de creación de eventos de una semana a menos de un día; además, rediseñé código legacy para mejorar la experiencia de usuario."
+      }
+    ]
+  },
+  "blog": {
+    "title": "Blog"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "header": {
+    "labels": {
+      "github": "Kevin's GitHub",
+      "twitter": "Kevin's Twitter",
+      "linkedin": "Kevin's LinkedIn"
+    }
+  },
+  "summary": {
+    "tags": [
+      "Fullstack web developer",
+      "Software developer",
+      "in: Argentina",
+      "exp: 2+ years",
+      "lang: Spanish",
+      "lang: English"
+    ],
+    "toEnglish": "Switch language to English",
+    "toSpanish": "Switch language to Spanish"
+  },
+  "callToAction": {
+    "title": "Lets work together",
+    "email": "Email me",
+    "linkedin": "Or contact me through"
+  },
+  "experience": {
+    "title": "Experience",
+    "items": [
+      {
+        "date_start": "2025",
+        "date_end": "2025",
+        "title": "Software Developer",
+        "org": "Self-Employed",
+        "desc": "Developed a straightforward and minimalist frontend resume site for self."
+      },
+      {
+        "date_start": "2023",
+        "date_end": "2023",
+        "title": "Software Developer",
+        "org": "Government of the City of Buenos Aires",
+        "desc": "Coordinated an agile squad of 8 to launch a fullstack website for partner and event management, reducing event creation times from a week to less than a day; additionally, I redesigned legacy code to improve user experience."
+      }
+    ]
+  },
+  "blog": {
+    "title": "Blog"
+  }
+}
