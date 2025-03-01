@@ -2,9 +2,11 @@ import { Dictionary } from "../dictionaries";
 
 export default function CallToAction({ dict: dict }: { dict: Dictionary }) {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:gap-0">
       <div className="flex h-full items-center">
-        <h2 className="!text-[calc(var(--h3))]">{dict.callToAction.title}</h2>
+        <h2 className="!md:text-[calc(var(--h3))] !text-[calc(var(--h4))]">
+          {dict.callToAction.title}
+        </h2>
       </div>
       <div className="flex h-full flex-col items-center justify-end gap-[8px]">
         <a

@@ -8,10 +8,10 @@ export default function Tags({
   setLang: (lang: string) => void;
 }) {
   return (
-    <div className="__dict-tagger flex flex-col justify-center">
+    <div className="flex flex-col justify-center">
       <ul
         id="intro-tag-list"
-        className="__dict-tagger flex flex-wrap items-center gap-[16px]"
+        className="flex flex-wrap items-center gap-[8px] md:gap-[16px]"
       >
         {dict.summary.tags.map((tag, idx) => {
           const isSpanish =
@@ -21,7 +21,7 @@ export default function Tags({
           return (
             <li
               key={idx}
-              className="__dict-tagger rounded-lg border border-[var(--bg-secondary)] text-sm shadow-[0_0_6px_-3px_var(--color-primary-dark)] [&>]:py-1 [&>*]:px-4"
+              className="rounded-lg border border-[var(--bg-secondary)] text-sm shadow-[0_0_6px_-3px_var(--color-primary-dark)] [&>]:py-1 [&>*]:px-2 [&>*]:md:px-4"
             >
               {isSpanish ? (
                 <button
