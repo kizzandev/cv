@@ -8,7 +8,7 @@ export default function Tags({
   setLang: (lang: string) => void;
 }) {
   return (
-    <div className="flex flex-col justify-center">
+    <article className="flex flex-col justify-center">
       <ul
         id="intro-tag-list"
         className="flex flex-wrap items-center gap-[8px] md:gap-[16px]"
@@ -46,6 +46,6 @@ export default function Tags({
           );
         })}
       </ul>
-    </div>
+    </article>
   );
 }

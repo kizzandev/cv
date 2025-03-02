@@ -21,7 +21,7 @@ export default function Blog({
   }, [lang]);
 
   return (
-    <div className="flex flex-col gap-[16px]">
+    <article className="flex flex-col gap-[16px]">
       <h2 className="!text-[calc(var(--h4))]">{dict.blog.title}</h2>
       <section className="flex flex-row gap-4">
         <div className="relative before:absolute before:top-0 before:bottom-0 before:w-px before:bg-[var(--bg-secondary)]"></div>
@@ -56,6 +56,6 @@ export default function Blog({
             : null}
         </ul>
       </section>
-    </div>
+    </article>
   );
 }
