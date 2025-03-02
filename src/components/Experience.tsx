@@ -11,15 +11,15 @@ export default function Experience({ dict: dict }: { dict: Dictionary }) {
             const isSameDate = item.date_start === item.date_end;
 
             return (
-              <div
+              <li
                 key={idx}
-                className="relative z-50 before:absolute before:top-2 before:-left-5 before:size-2 before:rounded-full before:bg-[var(--color-primary-light)]"
+                className="before:absolute before:top-2 before:-left-5 before:size-2 before:rounded-full before:bg-[var(--color-primary-light)]"
               >
-                <span>
+                <p className="!text-sm !leading-6 text-pretty text-[var(--text-color-secondary)]">
                   {isSameDate
                     ? `${item.date_start}`
                     : `${item.date_start} - ${item.date_end}`}
-                </span>
+                </p>
                 <h3 className="!text-[calc(var(--h5))] !font-semibold">
                   {item.title}
                 </h3>
@@ -29,7 +29,7 @@ export default function Experience({ dict: dict }: { dict: Dictionary }) {
                 <p className="mt-2 !text-[calc(var(--small-low))] !leading-5 text-pretty text-[var(--text-color-secondary)]">
                   {item.desc}
                 </p>
-              </div>
+              </li>
             );
           })}
         </ul>
