@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getDictionary, type Dictionary } from "./dictionaries";
+import { allowedLangs, getDictionary, type Dictionary } from "./dictionaries";
 
 import Header from "./components/Header";
 import Tags from "./components/Tags";
@@ -9,15 +9,22 @@ import Blog from "./components/Blog";
 import Footer from "./components/Footer";
 
 export default function App() {
-  const [lang, setLang] = useState(localStorage.getItem("lang") ?? "ag");
-  const [dict, setDict] = useState<Dictionary>(getDictionary("ag"));
+  const start_lang =
+    document.querySelector("html")?.getAttribute("lang") ?? "ag";
+  const [lang, setLang] = useState(localStorage.getItem("lang") ?? start_lang);
+  const [dict, setDict] = useState<Dictionary>(getDictionary(start_lang));
 
   useEffect(() => {
-    const dlang = lang as "en" | "ag";
+    let dlang = lang;
+    if (!allowedLangs.includes(dlang)) {
+      dlang = "ag";
+    }
     setDict(getDictionary(dlang));
     localStorage.lang = dlang;
-    const finalLang = dlang === "ag" ? "es" : dlang;
-    document.documentElement.lang = finalLang;
+    if (dlang === "ag") {
+      dlang = "es";
+    }
+    document.documentElement.lang = dlang;
   }, [lang]);
 
   return (
