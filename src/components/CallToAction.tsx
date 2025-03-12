@@ -19,7 +19,7 @@ export default function CallToAction({ dict: dict }: { dict: Dictionary }) {
             {dict.callToAction.email}
           </p>
         </a>
-        <span className="!text-sm [&>a]:underline [&>a]:transition-colors [&>a]:duration-300 [&>a]:hover:text-[var(--color-primary-dark)] [&>a]:focus:text-[var(--color-primary-dark)]">
+        <span className="!text-sm [&>a]:underline [&>a]:underline-offset-2 [&>a]:transition-colors [&>a]:duration-300 [&>a]:hover:text-[var(--color-primary-dark)] [&>a]:focus:text-[var(--color-primary-dark)]">
           {dict.callToAction.linkedin}{" "}
           <a
             href="https://www.linkedin.com/messaging/compose/?recipient=kevinzanzi"

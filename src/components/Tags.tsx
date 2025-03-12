@@ -1,5 +1,19 @@
 import { type Dictionary } from "../dictionaries";
 
+function getLang(tag: string): [boolean, string] {
+  switch (tag) {
+    case "lang: Spanish":
+    case "idioma: Español":
+      return [true, "ag"];
+    case "lang: English":
+    case "idioma: Inglés":
+      return [true, "en"];
+    default:
+      return [false, ""];
+  }
+}
+
+// MARK: EXPORT DEFAULT
 export default function Tags({
   dict,
   setLang,
@@ -14,30 +28,22 @@ export default function Tags({
         className="flex flex-wrap items-center gap-[8px] md:gap-[16px]"
       >
         {dict.summary.tags.map((tag, idx) => {
-          const isSpanish =
-            tag === "lang: Spanish" || tag === "idioma: Español";
-          const isEnglish = tag === "lang: English" || tag === "idioma: Inglés";
+          const [isLang, langCode] = getLang(tag);
+          const label =
+            langCode === "ag" ? dict.summary.toSpanish : dict.summary.toEnglish;
 
           return (
             <li
               key={idx}
               className="rounded-lg border border-[var(--bg-secondary)] text-sm shadow-[0_0_6px_-3px_var(--color-primary-dark)] [&>]:py-1 [&>*]:px-2 [&>*]:md:px-4"
             >
-              {isSpanish ? (
+              {isLang ? (
                 <button
                   className="h-full w-full cursor-pointer transition-colors duration-300 hover:text-[var(--color-primary-dark)] focus:text-[var(--color-primary-dark)]"
-                  onClick={() => setLang("ag")}
-                  aria-label={dict.summary.toSpanish}
+                  onClick={() => setLang(langCode)}
+                  aria-label={label}
                 >
-                  {tag}
-                </button>
-              ) : isEnglish ? (
-                <button
-                  className="h-full w-full cursor-pointer transition-colors duration-300 hover:text-[var(--color-primary-dark)] focus:text-[var(--color-primary-dark)]"
-                  onClick={() => setLang("en")}
-                  aria-label={dict.summary.toEnglish}
-                >
-                  {tag}
+                  <span className="border-b border-dashed">{tag}</span>
                 </button>
               ) : (
                 <span>{tag}</span>

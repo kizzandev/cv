@@ -1,13 +1,17 @@
 import { Dictionary } from "../dictionaries";
 
+const ITEMS_PER_PAGE = 4;
+
 export default function Experience({ dict: dict }: { dict: Dictionary }) {
   return (
     <article className="flex flex-col gap-[16px]">
       <h2 className="!text-[calc(var(--h4))]">{dict.experience.title}</h2>
       <section className="flex flex-row gap-4">
-        <div className="relative before:absolute before:top-2 before:bottom-0 before:w-px before:bg-[var(--bg-secondary)]"></div>
+        <div
+          className={`before:absolute before:top-2 before:bottom-8 before:w-px before:bg-[var(--bg-secondary)] after:absolute after:bottom-0 after:h-8 after:w-px after:bg-[linear-gradient(transparent_33%,_var(--bg-secondary)_0%)] after:bg-[length:1px_10px] after:bg-repeat-y`}
+        ></div>
         <ul className="flex flex-col gap-[24px]">
-          {dict.experience.items.map((item, idx) => {
+          {dict.experience.items.slice(0, ITEMS_PER_PAGE).map((item, idx) => {
             const isSameDate = item.date_start === item.date_end;
 
             return (

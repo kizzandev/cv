@@ -24,24 +24,27 @@ export default function Blog({
     <article className="flex flex-col gap-[16px]">
       <h2 className="!text-[calc(var(--h4))]">{dict.blog.title}</h2>
       <section className="flex flex-row gap-4">
-        <div className="relative before:absolute before:top-0 before:bottom-0 before:w-px before:bg-[var(--bg-secondary)]"></div>
-        <ul className="flex flex-col gap-[24px]">
-          {feed
-            ? feed.map((item, idx) => {
+        {feed ? (
+          <>
+            <div className="before:absolute before:top-5 before:bottom-[27px] before:w-px before:bg-[var(--bg-secondary)]"></div>
+            <ul className="flex flex-col gap-[24px]">
+              {feed.map((item, idx) => {
                 return (
-                  <li className="rounded-sm border border-[var(--bg-secondary)] before:absolute before:top-4 before:-left-5 before:size-2 before:rounded-full before:bg-[var(--color-primary-light)]">
+                  <li
+                    key={idx}
+                    className="rounded-sm border border-[var(--bg-secondary)] before:absolute before:top-4 before:-left-[21px] before:size-2 before:rounded-full before:bg-[var(--color-primary-light)]"
+                  >
                     <a
                       href={item.link}
                       target="_blank"
                       rel="noreferrer"
-                      key={idx}
                       className="inline-block w-full cursor-pointer px-2 pt-0.5 pb-2 hover:[&>h3]:text-[var(--color-primary-dark)] focus:[&>h3]:text-[var(--color-primary-dark)]"
                     >
                       <span>{item.pubDate}</span>
                       <h3 className="!text-[calc(var(--h5))] !font-semibold text-pretty transition-colors duration-300">
                         {item.title}{" "}
                         <Link
-                          className="absolute -top-1 right-0 inline-block h-full w-fit"
+                          className="absolute -top-1 inline-block h-full w-fit pl-0.5"
                           height={16}
                           width={16}
                         />
@@ -52,9 +55,50 @@ export default function Blog({
                     </a>
                   </li>
                 );
-              })
-            : null}
-        </ul>
+              })}
+              <li
+                key={feed.length}
+                className="pl-2 before:absolute before:top-2 before:-left-4 before:h-3 before:w-3 before:rounded-bl-[4px] before:border before:border-transparent before:border-b-[var(--bg-secondary)] before:border-l-[var(--bg-secondary)] after:absolute after:top-4 after:-left-3 after:size-2 after:rounded-full after:bg-[var(--color-primary-light)]"
+              >
+                <a
+                  href={"https://blog.kizzan.dev"}
+                  target="_blank"
+                  rel="noreferrer"
+                  key="0"
+                  className="inline-block w-full cursor-pointer hover:[&>p]:text-[var(--color-primary-dark)] focus:[&>p]:text-[var(--color-primary-dark)]"
+                >
+                  <p className="!text-[calc(var(--h6))] !font-semibold text-pretty underline underline-offset-2 transition-colors duration-300">
+                    {dict.blog.readmore}
+                    {""}
+                    <Link
+                      className="absolute -top-1 inline-block h-full w-fit pl-0.5"
+                      height={16}
+                      width={16}
+                    />
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </>
+        ) : (
+          <a
+            href={"https://blog.kizzan.dev"}
+            target="_blank"
+            rel="noreferrer"
+            key="0"
+            className="-mt-2 inline-block w-full cursor-pointer hover:[&>p]:text-[var(--color-primary-dark)] focus:[&>p]:text-[var(--color-primary-dark)]"
+          >
+            <p className="!text-[calc(var(--h6))] !font-semibold text-pretty underline underline-offset-2 transition-colors duration-300">
+              {dict.blog.readmore}
+              {""}
+              <Link
+                className="absolute -top-1 inline-block h-full w-fit pl-0.5"
+                height={16}
+                width={16}
+              />
+            </p>
+          </a>
+        )}
       </section>
     </article>
   );
