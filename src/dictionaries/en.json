@@ -43,6 +43,7 @@
     ]
   },
   "blog": {
-    "title": "Blog"
+    "title": "Blog",
+    "readmore": "Read more.."
   }
 }

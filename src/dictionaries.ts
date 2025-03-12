@@ -9,8 +9,9 @@
 import en from "./dictionaries/en.json";
 import ag from "./dictionaries/ag.json";
 
-export const getDictionary = (locale: "en" | "ag") =>
-  locale === "en" ? en : ag;
+export const allowedLangs = ["ag", "en"];
+
+export const getDictionary = (locale: string) => (locale === "en" ? en : ag);
 
 // type of the return type of getDictionary
 export type Dictionary = typeof en;
