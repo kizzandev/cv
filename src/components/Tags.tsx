@@ -35,11 +35,11 @@ export default function Tags({
           return (
             <li
               key={idx}
-              className="rounded-lg border border-[var(--bg-secondary)] text-sm shadow-[0_0_6px_-3px_var(--color-primary-dark)] [&>]:py-1 [&>*]:px-2 [&>*]:md:px-4"
+              className="rounded-lg border border-[var(--brand-grey-low)] text-sm shadow-[0_0_6px_-3px_var(--brand-blue)] [&>]:py-1 [&>*]:px-2 [&>*]:md:px-4"
             >
               {isLang ? (
                 <button
-                  className="h-full w-full cursor-pointer transition-colors duration-300 hover:text-[var(--color-primary-dark)] focus:text-[var(--color-primary-dark)]"
+                  className="h-full w-full cursor-pointer transition-colors duration-300 hover:text-[var(--brand-green)] focus:text-[var(--brand-green)]"
                   onClick={() => setLang(langCode)}
                   aria-label={label}
                 >

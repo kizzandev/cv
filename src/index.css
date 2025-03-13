@@ -10,21 +10,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --bg-primary: #16161d;
-  --bg-secondary: hsla(205, 49%, 69%, 0.2);
-
-  --text-color: hsl(240, 5%, 96%);
-  --text-color-secondary: hsl(240, 5%, 96%, 0.8);
-
-  --color-primary-light: hsl(200, 100%, 30%);
-  --color-primary-light-hover: hsl(200, 100%, 30%, 0.65);
-  --color-primary-dark: #66ccff;
-
-  --color-secondary-light: #89b6d7;
-  --color-secondary-dark: #285676;
-
-  --color-accent-light: #006f47;
-  --color-accent-dark: #00ffa6;
+  --brand-blue: hsl(200, 100%, 40%);
+  --brand-green: hsl(150, 75%, 45%);
+  /* --brand-purple: hsl(298, 100%, 29%); */
+  --brand-grey: hsl(30, 5%, 9%);
+  --brand-grey-low: hsl(30, 5%, 18%);
+  --brand-grey-light: hsl(240, 5%, 96%);
+  --brand-grey-light-low: hsl(240, 5%, 65%);
 
   --border-radius-4: 4px;
   --border-radius-8: 8px;

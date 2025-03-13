@@ -26,19 +26,19 @@ export default function Blog({
       <section className="flex flex-row gap-4">
         {feed ? (
           <>
-            <div className="before:absolute before:top-5 before:bottom-[27px] before:w-px before:bg-[var(--bg-secondary)]"></div>
+            <div className="before:absolute before:top-5 before:bottom-[27px] before:w-px before:bg-[var(--brand-grey-low)]"></div>
             <ul className="flex flex-col gap-[24px]">
               {feed.map((item, idx) => {
                 return (
                   <li
                     key={idx}
-                    className="rounded-sm border border-[var(--bg-secondary)] before:absolute before:top-4 before:-left-[21px] before:size-2 before:rounded-full before:bg-[var(--color-primary-light)]"
+                    className="rounded-sm border border-[var(--brand-grey-low)] transition-colors duration-300 before:absolute before:top-4 before:-left-[21px] before:size-2 before:rounded-full before:bg-[var(--brand-blue)] hover:border-[var(--brand-blue)]"
                   >
                     <a
                       href={item.link}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-block w-full cursor-pointer px-2 pt-0.5 pb-2 hover:[&>h3]:text-[var(--color-primary-dark)] focus:[&>h3]:text-[var(--color-primary-dark)]"
+                      className="inline-block w-full cursor-pointer px-2 pt-0.5 pb-2 hover:[&>h3]:text-[var(--brand-green)] focus:[&>h3]:text-[var(--brand-green)]"
                     >
                       <span>{item.pubDate}</span>
                       <h3 className="!text-[calc(var(--h5))] !font-semibold text-pretty transition-colors duration-300">
@@ -49,7 +49,7 @@ export default function Blog({
                           width={16}
                         />
                       </h3>
-                      <p className="!text-[calc(var(--small-low))] !leading-5 text-pretty text-[var(--text-color-secondary)]">
+                      <p className="!text-[calc(var(--small-low))] !leading-5 text-pretty text-[var(--brand-grey-light-low)]">
                         {item.description}
                       </p>
                     </a>
@@ -58,14 +58,14 @@ export default function Blog({
               })}
               <li
                 key={feed.length}
-                className="pl-2 before:absolute before:top-2 before:-left-4 before:h-3 before:w-3 before:rounded-bl-[4px] before:border before:border-transparent before:border-b-[var(--bg-secondary)] before:border-l-[var(--bg-secondary)] after:absolute after:top-4 after:-left-3 after:size-2 after:rounded-full after:bg-[var(--color-primary-light)]"
+                className="pl-2 before:absolute before:top-2 before:-left-4 before:h-3 before:w-3 before:rounded-bl-[4px] before:border before:border-transparent before:border-b-[var(--brand-grey-low)] before:border-l-[var(--brand-grey-low)] after:absolute after:top-4 after:-left-3 after:size-2 after:rounded-full after:bg-[var(--brand-blue)]"
               >
                 <a
                   href={"https://blog.kizzan.dev"}
                   target="_blank"
                   rel="noreferrer"
                   key="0"
-                  className="inline-block w-full cursor-pointer hover:[&>p]:text-[var(--color-primary-dark)] focus:[&>p]:text-[var(--color-primary-dark)]"
+                  className="inline-block w-full cursor-pointer hover:[&>p]:text-[var(--brand-green)] focus:[&>p]:text-[var(--brand-green)]"
                 >
                   <p className="!text-[calc(var(--h6))] !font-semibold text-pretty underline underline-offset-2 transition-colors duration-300">
                     {dict.blog.readmore}
@@ -86,7 +86,7 @@ export default function Blog({
             target="_blank"
             rel="noreferrer"
             key="0"
-            className="-mt-2 inline-block w-full cursor-pointer hover:[&>p]:text-[var(--color-primary-dark)] focus:[&>p]:text-[var(--color-primary-dark)]"
+            className="-mt-2 inline-block w-full cursor-pointer hover:[&>p]:text-[var(--brand-green)] focus:[&>p]:text-[var(--brand-green)]"
           >
             <p className="!text-[calc(var(--h6))] !font-semibold text-pretty underline underline-offset-2 transition-colors duration-300">
               {dict.blog.readmore}
