@@ -29,7 +29,7 @@ export default function App() {
 
   return (
     <article className="min-h-screen bg-[var(--brand-grey)] px-[16px] py-[48px] text-[var(--brand-grey-light)]">
-      <main className="_max-w-7xl mx-auto flex max-w-[80ch] flex-col gap-[48px] selection:bg-[var(--brand-green)] selection:text-[var(--brand-grey)] **:focus:border-[var(--brand-blue)] **:focus:outline-none">
+      <main className="mx-auto flex max-w-3xl flex-col gap-[48px] selection:bg-[var(--brand-green)] selection:text-[var(--brand-grey)] **:focus:border-[var(--brand-blue)] **:focus:outline-none">
         <Header dict={dict} />
         <Tags dict={dict} setLang={setLang} />
         <CallToAction dict={dict} />

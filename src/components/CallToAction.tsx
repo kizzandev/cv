@@ -10,7 +10,7 @@ export default function CallToAction({ dict: dict }: { dict: Dictionary }) {
       </section>
       <section className="flex h-full flex-col items-center justify-end gap-[8px]">
         <a
-          className="w-full max-w-[max(50%,_196px)] rounded-lg border border-[var(--brand-grey-low)] transition-colors duration-300 hover:border-[var(--brand-blue)] focus:text-[var(--brand-green)]"
+          className="w-full rounded-lg border border-[var(--brand-grey-low)] transition-colors duration-300 hover:border-[var(--brand-blue)] focus:text-[var(--brand-green)]"
           href="mailto:kevin@kizzan.dev"
           target="_blank"
           rel="noreferrer"

@@ -26,13 +26,13 @@ export default function Blog({
       <section className="flex flex-row gap-4">
         {feed ? (
           <>
-            <div className="before:absolute before:top-5 before:bottom-[27px] before:w-px before:bg-[var(--brand-grey-low)]"></div>
+            <div className="before:absolute before:top-5 before:bottom-7 before:w-px before:bg-[var(--brand-grey-low)]"></div>
             <ul className="flex flex-col gap-[24px]">
               {feed.map((item, idx) => {
                 return (
                   <li
                     key={idx}
-                    className="rounded-sm border border-[var(--brand-grey-low)] transition-colors duration-300 before:absolute before:top-4 before:-left-[21px] before:size-2 before:rounded-full before:bg-[var(--brand-blue)] hover:border-[var(--brand-blue)]"
+                    className="rounded-sm border border-[var(--brand-grey-low)] transition-colors duration-300 before:absolute before:top-4 before:-left-5 before:size-2 before:rounded-full before:bg-[var(--brand-blue)] hover:border-[var(--brand-blue)]"
                   >
                     <a
                       href={item.link}
